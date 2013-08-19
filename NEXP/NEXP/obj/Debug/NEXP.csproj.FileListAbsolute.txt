@@ -1,0 +1,44 @@
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\bin\Debug\NEXP.exe
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\bin\Debug\NEXP.pdb
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\bin\Debug\FirstFloor.ModernUI.dll
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\bin\Debug\FirstFloor.ModernUI.xml
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\NEXP.csprojResolveAssemblyReference.cache
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\MainWindow.baml
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\Content\About.baml
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\Content\SettingsAppearance.baml
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\Pages\Home.baml
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\Pages\Settings.baml
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\App.baml
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\MainWindow.g.cs
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\Content\About.g.cs
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\Content\SettingsAppearance.g.cs
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\Pages\Home.g.cs
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\Pages\Settings.g.cs
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\App.g.cs
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\NEXP_MarkupCompile.cache
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\NEXP.g.resources
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\NEXP.exe
+c:\users\workshop\documents\visual studio 2012\Projects\NEXP\NEXP\obj\Debug\NEXP.pdb
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\NEXP.exe
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\NEXP.pdb
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\NEXP.csprojResolveAssemblyReference.cache
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\MainWindow.baml
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\Content\About.baml
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\Content\SettingsAppearance.baml
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\Pages\Home.baml
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\Pages\Settings.baml
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\App.baml
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\MainWindow.g.cs
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\Content\About.g.cs
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\Content\SettingsAppearance.g.cs
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\Pages\Home.g.cs
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\Pages\Settings.g.cs
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\App.g.cs
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\NEXP_MarkupCompile.cache
+D:\Code\GitHub\NEXP\NEXP\obj\Debug\NEXP.g.resources
+D:\Code\GitHub\NEXP\NEXP\bin\Debug\NEXP.exe
+D:\Code\GitHub\NEXP\NEXP\bin\Debug\NEXP.pdb
+D:\Code\GitHub\NEXP\NEXP\bin\Debug\FirstFloor.ModernUI.dll
+D:\Code\GitHub\NEXP\NEXP\bin\Debug\FirstFloor.ModernUI.xml
+D:\Code\GitHub\NEXP\NEXP\NEXP\obj\Debug\NEXP.exe
+D:\Code\GitHub\NEXP\NEXP\NEXP\obj\Debug\NEXP.pdb
