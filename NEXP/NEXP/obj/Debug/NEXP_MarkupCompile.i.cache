@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Code\GitHub\NEXP\NEXP\NEXP\obj\Debug\
+C:\Users\workshop\NEXP\NEXP\NEXP\obj\Debug\
 NEXP
 none
 false
 DEBUG;TRACE
-D:\Code\GitHub\NEXP\NEXP\NEXP\App.xaml
+C:\Users\workshop\NEXP\NEXP\NEXP\App.xaml
 5250945925
 
-16-1546808421
-13829349963
+17-85029649
+13507778512
 MainWindow.xaml;Content\About.xaml;Content\SettingsAppearance.xaml;Pages\Home.xaml;Pages\Settings.xaml;
 
 False
