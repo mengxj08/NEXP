@@ -6,10 +6,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer>
-            <StackPanel MinWidth="200">
-                <TextBlock Text="TODO: add content" />
-            </StackPanel>
-        </ScrollViewer>
+        <ListBox Height="22" Margin="0,0,0,237">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                        <TextBlock Text="name1" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBoxItem>
+                111
+            </ListBoxItem>
+            <ListBoxItem>222</ListBoxItem>
+            <ListBoxItem>333</ListBoxItem>
+            <ListBoxItem>444</ListBoxItem>
+            <ListBoxItem>555</ListBoxItem>
+        </ListBox>
+
+        <ComboBox Margin="0,123,0,107">
+        </ComboBox>
     </Grid>
 </UserControl>
