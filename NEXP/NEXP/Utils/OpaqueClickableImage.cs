@@ -22,6 +22,18 @@ namespace NEXP.Utils
 
             // Copy the single pixel into a new byte array representing RGBA
             var pixel = new byte[4];
+
+            //var stride = source.PixelWidth * (source.Format.BitsPerPixel / 8);
+            //var mod = stride % 4;
+            //if (mod != 0)
+            //{
+            //    stride += 4 - mod;
+            //}
+            //var cut = new Int32Rect(x, y, 1, 1);
+            //var stride = source.Format.BitsPerPixel * cut.Width / 8;
+            //byte[] pixel = new byte[cut.Height * stride];
+            //source.CopyPixels(cut, pixel, stride, 0);
+
             source.CopyPixels(new Int32Rect(x, y, 1, 1), pixel, 4, 0);
 
             // Check the alpha (transparency) of the pixel
@@ -30,6 +42,13 @@ namespace NEXP.Utils
                 return null;
 
             return new PointHitTestResult(this, hitTestParameters.HitPoint);
+        }
+
+        protected override GeometryHitTestResult HitTestCore(GeometryHitTestParameters hitTestParameters)
+        {
+            // Do something similar here, possibly checking every pixel within
+            // the hitTestParameters.HitGeometry.Bounds rectangle
+            return base.HitTestCore(hitTestParameters);
         }
     }
 }
