@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\workshop\NEXP\NEXP\NEXP\obj\Debug\
+D:\Code\GitHub\NEXP\NEXP\NEXP\obj\Debug\
 NEXP
 none
 false
 DEBUG;TRACE
-C:\Users\workshop\NEXP\NEXP\NEXP\App.xaml
-5250945925
-
-131940082563
-13507778512
-MainWindow.xaml;Content\About.xaml;Content\SettingsAppearance.xaml;Pages\Home.xaml;Pages\Settings.xaml;
+D:\Code\GitHub\NEXP\NEXP\NEXP\App.xaml
+11853823086
+51022690863
+18-1405755506
+151431583234
+MainWindow.xaml;Content\About.xaml;Content\SettingsAppearance.xaml;Pages\ArrangeConditions.xaml;Pages\BlockAndTrial.xaml;Pages\DetermineVariables.xaml;Pages\Home.xaml;Pages\ResearchQuestion.xaml;Pages\SetInstructionsProcedures.xaml;Pages\Settings.xaml;Resources\Icons.xaml;
 
 False
 

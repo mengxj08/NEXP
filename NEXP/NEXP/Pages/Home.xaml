@@ -5,11 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              xmlns:Utils="clr-namespace:NEXP.Utils" x:Class="NEXP.Pages.Home" 
-             mc:Ignorable="d" 
-             d:DesignHeight="750" d:DesignWidth="750">
+             mc:Ignorable="d" Height="750" Width="750" 
+             >
     <Grid Style="{StaticResource ContentRoot}">
-        <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="131,138,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_1" MouseUp="OpaqueClickableImage_MouseUp_1" Source="C:\Users\workshop\NEXP\NEXP\NEXP\Src\1-researchquestion.png" Height="230" Width="282" />
-        
+        <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="0,-12,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_1" MouseUp="OpaqueClickableImage_MouseUp_1" Source="D:\Code\GitHub\NEXP\NEXP\NEXP\ImageSources\1-researchquestion.png" Height="167" Width="214" />
 
     </Grid>
 </UserControl>
