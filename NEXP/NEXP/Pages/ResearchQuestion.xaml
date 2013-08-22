@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="NEXP.Pages.ResearchQuestion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="750">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Canvas HorizontalAlignment="Left" Height="686" Margin="10,10,0,0" VerticalAlignment="Top" Width="150"/>
+        <Canvas HorizontalAlignment="Left" Height="686" Margin="165,10,0,0" VerticalAlignment="Top" Width="543"/>
+
+
+    </Grid>
+</UserControl>
