@@ -46,8 +46,8 @@ namespace NEXP.Pages
                 TimeSpan timeSinceDown = DateTime.Now - this.downTime;
                 if (timeSinceDown.TotalMilliseconds < 500)
                 {
-                    //MessageBox.Show("Image Click");
-                    NavigationCommands.GoToPage.Execute("/Pages/Test.xaml", this);   // http://mui.codeplex.com/discussions/434905
+                    MessageBox.Show("Image Click: " + downSender.ToString());
+                    //NavigationCommands.GoToPage.Execute("/Pages/Test.xaml", this);   // http://mui.codeplex.com/discussions/434905
                 }
             }
         }

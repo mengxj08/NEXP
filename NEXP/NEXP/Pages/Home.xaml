@@ -6,8 +6,10 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              xmlns:Utils="clr-namespace:NEXP.Utils" x:Class="NEXP.Pages.Home" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="750" d:DesignWidth="750">
     <Grid Style="{StaticResource ContentRoot}">
-        <Utils:OpaqueClickableImage HorizontalAlignment="Left" Height="115" Margin="26,19,0,0" VerticalAlignment="Top" Width="129" Source="D:\yongfeng\Yongfeng\NUS_RA\UserStudyDesign\Design\triangle.png" MouseDown="OpaqueClickableImage_MouseDown_1" MouseUp="OpaqueClickableImage_MouseUp_1" Stretch="None"/>
+        <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="131,138,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_1" MouseUp="OpaqueClickableImage_MouseUp_1" Source="C:\Users\workshop\NEXP\NEXP\NEXP\Src\1-researchquestion.png" Height="230" Width="282" />
+        
+
     </Grid>
 </UserControl>
