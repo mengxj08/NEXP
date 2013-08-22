@@ -20,8 +20,5 @@
             <ListBoxItem>444</ListBoxItem>
             <ListBoxItem>555</ListBoxItem>
         </ListBox>
-
-        <ComboBox Margin="0,123,0,107">
-        </ComboBox>
     </Grid>
 </UserControl>
