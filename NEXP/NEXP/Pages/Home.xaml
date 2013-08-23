@@ -14,6 +14,5 @@
         <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="361,408,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_1" MouseUp="OpaqueClickableImage_MouseUp_1" Source="D:\Code\GitHub\NEXP\NEXP\NEXP\ImageSources\4.decideblockstrials.png" Height="181" Width="239" x:Name="BlockAndTrial"/>
         <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="148,422,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_1" MouseUp="OpaqueClickableImage_MouseUp_1" Source="D:\Code\GitHub\NEXP\NEXP\NEXP\ImageSources\5.setinstructionsandprocedures.png" Height="182" Width="231" x:Name="SetInstructionsProcedures"/>
         <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="106,193,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_1" MouseUp="OpaqueClickableImage_MouseUp_1" Source="D:\Code\GitHub\NEXP\NEXP\NEXP\ImageSources\back.png" Height="267" Width="111" x:Name="Back"/>
-
     </Grid>
 </UserControl>

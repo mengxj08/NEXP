@@ -6,7 +6,7 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              xmlns:Utils="clr-namespace:NEXP.Utils"
              mc:Ignorable="d" 
-             d:DesignHeight="750" d:DesignWidth="750">
+             d:DesignHeight="950" d:DesignWidth="750">
     <Grid Style="{StaticResource ContentRoot}">
         <Canvas HorizontalAlignment="Left" Height="686" Margin="10,10,0,0" VerticalAlignment="Top" Width="150">
             <Utils:OpaqueClickableImage x:Name="BackButton" HorizontalAlignment="Left" VerticalAlignment="Top" Source="D:\Code\GitHub\NEXP\NEXP\NEXP\ImageSources\backButton.png" MouseDown="OpaqueClickableImage_MouseDown_backButton" MouseUp="OpaqueClickableImage_MouseUp_backButton" Height="151" Width="83" Canvas.Top="10" />
