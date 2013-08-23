@@ -20,9 +20,69 @@ namespace NEXP.Pages
     /// </summary>
     public partial class ResearchQuestion : UserControl
     {
+        private DateTime downTime;
+        private object downSender;
+        private Point downPosition;
+
         public ResearchQuestion()
         {
             InitializeComponent();
+        }
+
+        private void OpaqueClickableImage_MouseDown_backButton(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.downSender = sender;
+                this.downTime = DateTime.Now;
+                this.downPosition = e.GetPosition(sender as Image);
+            }
+        }
+
+        private void OpaqueClickableImage_MouseUp_backButton(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Released && sender == this.downSender)
+            {
+                TimeSpan timeSinceDown = DateTime.Now - this.downTime;
+                if (timeSinceDown.TotalMilliseconds < 500)
+                {
+                    //MessageBox.Show("Image Click: " + sender.ToString());
+                    NEXP.Utils.OpaqueClickableImage tmp = sender as NEXP.Utils.OpaqueClickableImage;
+
+                    if (tmp.Name == "BackButton")
+                    {
+                        NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
+                    }
+                }
+            }
+        }
+
+        private void OpaqueClickableImage_MouseDown_NextButton(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.downSender = sender;
+                this.downTime = DateTime.Now;
+                this.downPosition = e.GetPosition(sender as Image);
+            }
+        }
+
+        private void OpaqueClickableImage_MouseUp_NextButton(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Released && sender == this.downSender)
+            {
+                TimeSpan timeSinceDown = DateTime.Now - this.downTime;
+                if (timeSinceDown.TotalMilliseconds < 500)
+                {
+                    //MessageBox.Show("Image Click: " + sender.ToString());
+                    NEXP.Utils.OpaqueClickableImage tmp = sender as NEXP.Utils.OpaqueClickableImage;
+
+                    if (tmp.Name == "NextButton")
+                    {
+                        NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
+                    }
+                }
+            }
         }
     }
 }

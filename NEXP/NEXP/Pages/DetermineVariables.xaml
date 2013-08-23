@@ -9,7 +9,7 @@
              d:DesignHeight="950" d:DesignWidth="750">
     <Grid Style="{StaticResource ContentRoot}">
         <Canvas HorizontalAlignment="Left" Height="686" Margin="10,10,0,0" VerticalAlignment="Top" Width="150">
-            <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="D:\Code\GitHub\NEXP\NEXP\NEXP\ImageSources\backButton.png" Height="151" Width="83" Canvas.Top="10" />
+            <Utils:OpaqueClickableImage x:Name="BackButton" HorizontalAlignment="Left" VerticalAlignment="Top" Source="D:\Code\GitHub\NEXP\NEXP\NEXP\ImageSources\backButton.png" Height="142" Width="82" Canvas.Top="10" MouseDown="OpaqueClickableImage_MouseDown_backButton" MouseUp="OpaqueClickableImage_MouseUp_backButton"/>
             <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="D:\Code\GitHub\NEXP\NEXP\NEXP\ImageSources\sidebar-determinevariable.png" Height="355" Width="150" Canvas.Top="96" />
             <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="D:\Code\GitHub\NEXP\NEXP\NEXP\ImageSources\sidebar-bottom.png" Height="409" Width="150" Canvas.Top="193" />
         </Canvas>
