@@ -15,13 +15,14 @@ namespace NEXP.Utils
         protected override HitTestResult HitTestCore(PointHitTestParameters hitTestParameters)
         {
             var source = (BitmapSource)Source;
-
+            /*
             Log.getLogInstance().writeLog("source.PixelWidth:" + source.PixelWidth);
             Log.getLogInstance().writeLog("source.PixelHeight:" + source.PixelHeight);
             Log.getLogInstance().writeLog("hitTestParameters.HitPoint.X:" + hitTestParameters.HitPoint.X);
             Log.getLogInstance().writeLog("hitTestParameters.HitPoint.Y:" + hitTestParameters.HitPoint.Y);
             Log.getLogInstance().writeLog("ActualWidth:" + ActualWidth);
             Log.getLogInstance().writeLog("ActualHeight:" + ActualHeight);
+             * */
             // Get the pixel of the source that was hit
             var x = (int)(hitTestParameters.HitPoint.X / ActualWidth * source.PixelWidth);
             var y = (int)(hitTestParameters.HitPoint.Y / ActualHeight * source.PixelHeight);

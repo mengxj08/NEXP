@@ -23,6 +23,13 @@ namespace NEXP.Content
         public RQ_list2()
         {
             InitializeComponent();
+            BindingProcess();
+        }
+        private void BindingProcess()
+        {
+            this.RQ_experimentConductor.DataContext = NEXP.MainWindow.datas;
+            this.RQ_experimentTitle.DataContext = NEXP.MainWindow.datas;
+            this.RQ_experimentDescription.DataContext = NEXP.MainWindow.datas;
         }
     }
 }

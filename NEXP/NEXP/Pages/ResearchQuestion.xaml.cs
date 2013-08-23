@@ -24,7 +24,7 @@ namespace NEXP.Pages
         private DateTime downTime;
         private object downSender;
         private Point downPosition;
-        private int i = 0;
+        private int i = 1;
 
         public ResearchQuestion()
         {

@@ -23,6 +23,11 @@ namespace NEXP.Content
         public RQ_list1()
         {
             InitializeComponent();
+            BindingProcess();
+        }
+        private void BindingProcess()
+        {
+            this.YourQuestion.DataContext = NEXP.MainWindow.datas;
         }
     }
 }

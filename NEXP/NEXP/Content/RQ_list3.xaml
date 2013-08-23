@@ -5,13 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer>
-            <StackPanel MinWidth="200">
-                <TextBlock Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <TextBlock Text="RQ_list3 goes here" />
-            </StackPanel>
-        </ScrollViewer>
-    </Grid>
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Canvas x:Name="canvas_RQ3">
+        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="10" Canvas.Top="89">
+            <ListBox x:Name="compareSolutions" Height="26" Canvas.Left="174" Canvas.Top="89" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding Path=compareSolutions,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  />
+        </Border>
+        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="174" Canvas.Top="150">
+            <ListBox x:Name="tasks" Height="26" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding tasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="174" Canvas.Top="150" />
+        </Border>
+        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="174" Canvas.Top="299">
+            <ListBox x:Name="measures" Height="26" Canvas.Left="177" Canvas.Top="299" Width="192" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding measures, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </Border >
+        <TextBlock Canvas.Left="251" TextWrapping="Wrap" Text="is better than" Canvas.Top="27" Width="213" Height="26" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="in" Canvas.Top="150" Width="111" Height="26" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="under" Canvas.Top="222" Width="111" Height="33" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="based on" Canvas.Top="299" Width="111" Height="40" Style="{StaticResource Heading1}" RenderTransformOrigin="0.505,3.423" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <Button Canvas.Left="298" Canvas.Top="420" Width="127" Height="26" Click="Item_Del" Content="Deleting Item"/>
+        <TextBox x:Name="Addtext" Height="26" Canvas.Left="136" TextWrapping="Wrap" Canvas.Top="420" Width="93"/>
+        <Button Canvas.Left="10" Canvas.Top="420" Width="105" Height="26" Click="Item_Add" Content="Adding Item" RenderTransformOrigin="-1.134,0.846"/>
+
+        <TextBox x:Name="mainSolution" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="27" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=mainSolution, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="context" Height="26" Canvas.Left="174" TextWrapping="Wrap" Canvas.Top="222" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=context, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <CheckBox x:Name="checkbox1" Canvas.Left="461" Canvas.Top="89" Width="21" RenderTransformOrigin="-0.206,5.294" Checked="checkbox1_checked"/>
+        <CheckBox x:Name="checkbox2" Canvas.Left="461" Canvas.Top="222" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked"/>
+        <CheckBox x:Name="checkbox3" Canvas.Left="461" Canvas.Top="299" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox3_checked"/>
+        
+    </Canvas>
 </UserControl>
