@@ -46,8 +46,33 @@ namespace NEXP.Pages
                 TimeSpan timeSinceDown = DateTime.Now - this.downTime;
                 if (timeSinceDown.TotalMilliseconds < 500)
                 {
-                    MessageBox.Show("Image Click: " + downSender.ToString());
-                    //NavigationCommands.GoToPage.Execute("/Pages/Test.xaml", this);   // http://mui.codeplex.com/discussions/434905
+                    //MessageBox.Show("Image Click: " + sender.ToString());
+                    NEXP.Utils.OpaqueClickableImage tmp = sender as NEXP.Utils.OpaqueClickableImage;
+                    
+                    if (tmp.Name == "ResearchQuestion")
+                    {
+                        NavigationCommands.GoToPage.Execute("/Pages/ResearchQuestion.xaml", this);   // http://mui.codeplex.com/discussions/434905
+                    }
+                    else if (tmp.Name == "DetermineVariables")
+                    {
+                        NavigationCommands.GoToPage.Execute("/Pages/DetermineVariables.xaml", this);
+                    }
+                    else if (tmp.Name == "ArrangeConditions")
+                    {
+                        NavigationCommands.GoToPage.Execute("/Pages/ArrangeConditions.xaml", this);
+                    }
+                    else if (tmp.Name == "BlockAndTrial")
+                    {
+                        NavigationCommands.GoToPage.Execute("/Pages/BlockAndTrial.xaml", this);
+                    }
+                    else if (tmp.Name == "SetInstructionsProcedures")
+                    {
+                        NavigationCommands.GoToPage.Execute("/Pages/SetInstructionsProcedures.xaml", this);
+                    }
+                    else if (tmp.Name == "Back")
+                    {
+                        //NavigationCommands.
+                    }
                 }
             }
         }
