@@ -141,21 +141,17 @@
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Page Include="Resources\Icons.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Entypo-license.txt" />
-    <Content Include="Src\1-researchquestion.jpg" />
-    <Content Include="Src\1-researchquestion.png" />
-    <Content Include="Src\2-determinevariable.jpg" />
-    <Content Include="Src\2-determinevariable.png" />
+    <Content Include="ImageSources\1-researchquestion.png" />
+    <Content Include="ImageSources\2-determinevariable.png" />
+    <Content Include="ImageSources\3-arrangeconditions.png" />
+    <Content Include="ImageSources\4.decideblockstrials.png" />
+    <Content Include="ImageSources\5.setinstructionsandprocedures.png" />
+    <Content Include="ImageSources\back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
