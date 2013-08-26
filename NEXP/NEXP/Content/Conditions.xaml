@@ -23,7 +23,8 @@
 
     </UserControl.Resources>
     <Grid Style="{StaticResource ContentRoot}" Margin="0,10">
-        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="489" Width="500" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,-9,0,0">
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="489" Width="500" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,-9,0,0"
+                  ToolTip="The each unique combination of the different levels of the&#xa;various independent variables is an experimental condition.">
             <!--
                 <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">

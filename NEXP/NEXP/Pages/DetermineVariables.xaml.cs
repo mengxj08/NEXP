@@ -23,7 +23,7 @@ namespace NEXP.Pages
         private DateTime downTime;
         private object downSender;
         private Point downPosition;
-        private int i = 1;
+        private int content = 1;
 
         public DetermineVariables()
         {
@@ -86,13 +86,13 @@ namespace NEXP.Pages
                              NavigationCommands.GoToPage.Execute("/Content/RQ_list1.xaml", Frame);
                          }
                          */
-                        i++;
-                        i = i % 2;
-                        if (i == 1)
+                        content ++;
+                        content = content % 2;
+                        if (content == 1)
                         {
                             NavigationCommands.GoToPage.Execute("/Content/IDV.xaml", Frame);
                         }
-                        else if (i == 0)
+                        else if (content == 0)
                         {
                             NavigationCommands.GoToPage.Execute("/Content/DV.xaml", Frame);
                         }
