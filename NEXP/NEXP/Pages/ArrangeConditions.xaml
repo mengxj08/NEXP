@@ -10,7 +10,8 @@
     <Grid Style="{StaticResource ContentRoot}">
         <Canvas HorizontalAlignment="Left" Height="686" Margin="10,10,0,0" VerticalAlignment="Top" Width="150">
             <Utils:OpaqueClickableImage x:Name="BackButton" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/backButton.png" Height="151" Width="83" Canvas.Top="10" MouseDown="OpaqueClickableImage_MouseDown_backButton" MouseUp="OpaqueClickableImage_MouseUp_backButton"/>
-            <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/sidebar-arrangeconditions.png" Height="355" Width="150" Canvas.Top="96" />
+            <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/sidebar-arrangeconditions.png" Height="355" Width="150" Canvas.Top="96" 
+                                        ToolTip="3.1: List all Independent Variables and their levels&#xa;3.2: Decide counter-balancing strategy for each variable&#xa;3.3: Determine the minimum No. of participants&#xa;3.4: Arrange the overall design&#xa;3.5: Determine detailed arrangement for each participant"/>
             <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/sidebar-bottom.png" Height="431" Width="150" Canvas.Top="161" />
         </Canvas>
         <Border BorderBrush="{DynamicResource ButtonBorder}" Margin="165,0,0,10" BorderThickness="0">
