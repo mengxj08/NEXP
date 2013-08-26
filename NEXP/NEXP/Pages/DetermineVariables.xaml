@@ -18,5 +18,6 @@
             </mui:ModernFrame >
         </Border >
         <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="624,551,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_NextButton" MouseUp="OpaqueClickableImage_MouseUp_NextButton" Source="pack://siteoforigin:,,,../ImageSources/next.png" Height="85" Width="94" x:Name="NextButton"/>
+        <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="10,463,0,0" VerticalAlignment="Top"  Source="pack://siteoforigin:,,,../ImageSources/Navi2.png" Height="85" Width="94"/>
     </Grid>
 </UserControl>
