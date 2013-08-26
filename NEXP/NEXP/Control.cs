@@ -9,7 +9,7 @@ namespace NEXP
     class Control
     {
         private static Control control;
-        private Boolean FLAG = true;
+        //private Boolean FLAG = true;
         private Control()
         {
            

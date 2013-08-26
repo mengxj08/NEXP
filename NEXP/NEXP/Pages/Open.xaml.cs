@@ -23,7 +23,7 @@ namespace NEXP.Pages
     public partial class Open : System.Windows.Controls.UserControl
     {
         private OpenFileDialog dialog;
-        private bool firstLoad = true;
+        //private bool firstLoad = true;
 
         public Open()
         {

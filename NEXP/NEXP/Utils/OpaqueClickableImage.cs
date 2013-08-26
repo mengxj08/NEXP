@@ -34,7 +34,7 @@ namespace NEXP.Utils
             {
                 source.CopyPixels(new Int32Rect(x, y, 1, 1), pixel, 4, 0);
             }
-            catch(ArgumentException e)
+            catch(ArgumentException)
             {
               return null;
             }
