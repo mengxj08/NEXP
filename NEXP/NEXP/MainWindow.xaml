@@ -10,6 +10,8 @@
         <mui:LinkGroup DisplayName="welcome">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Design" Source="/Pages/Home.xaml" />
+                <mui:Link DisplayName="Open" Source="/Pages/Open.xaml" />
+                <mui:Link DisplayName="Save" Source="/Pages/Save.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="settings" GroupName="settings">
