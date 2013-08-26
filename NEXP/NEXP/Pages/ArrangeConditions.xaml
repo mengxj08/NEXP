@@ -17,5 +17,6 @@
             <mui:ModernFrame x:Name="Frame" Source="/Content/Conditions.xaml" Margin="10,10,10,9">
             </mui:ModernFrame >
         </Border >
+        <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="10,448,0,0" VerticalAlignment="Top"  Source="pack://siteoforigin:,,,../ImageSources/Navi3.png" Height="91" Width="102"/>
     </Grid>
 </UserControl>
