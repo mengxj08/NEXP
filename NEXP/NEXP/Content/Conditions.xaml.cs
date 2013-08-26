@@ -1,5 +1,4 @@
-﻿using FirstFloor.ModernUI.Windows.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,31 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NEXP
+namespace NEXP.Content
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Conditions.xaml
     /// </summary>
-    /// 
-    public enum MODE { NewItem, OpenItem };
-    public partial class MainWindow : ModernWindow
+    public partial class Conditions : UserControl
     {
-        
-        public static DataStructure datas = new DataStructure();
-
-        static public MODE modeType;
-
-        public MainWindow()
+        public Conditions()
         {
             InitializeComponent();
-        }
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            modeType = MODE.NewItem;
             BindingProcess();
         }
         private void BindingProcess()
         {
+            datagrid.DataContext = NEXP.MainWindow.datas.independentVariables;
+
         }
     }
 }

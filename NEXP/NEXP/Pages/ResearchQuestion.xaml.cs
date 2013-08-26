@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FirstFloor.ModernUI.Windows.Controls;
 
 namespace NEXP.Pages
 {
@@ -23,6 +24,7 @@ namespace NEXP.Pages
         private DateTime downTime;
         private object downSender;
         private Point downPosition;
+        private int i = 1;
 
         public ResearchQuestion()
         {
@@ -79,7 +81,32 @@ namespace NEXP.Pages
 
                     if (tmp.Name == "NextButton")
                     {
-                        NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
+                        //Log.getLogInstance().writeLog(Frame.Content.ToString());
+                       /*
+                        if (Frame.Content.ToString() == "/Content/RQ_list2.xaml")
+                        {
+                            NavigationCommands.GoToPage.Execute("/Content/RQ_list1.xaml", Frame);
+                        }
+                        */
+                        i++;
+                        i = i % 3;
+                        if (i == 1)
+                        {
+                            NavigationCommands.GoToPage.Execute("/Content/RQ_list1.xaml", Frame);
+                        }
+                        else if (i == 2)
+                        {
+                            NavigationCommands.GoToPage.Execute("/Content/RQ_list2.xaml", Frame);
+                        }
+                        else if (i == 0)
+                        {
+                            NavigationCommands.GoToPage.Execute("/Content/RQ_list3.xaml", Frame);
+                        }
+                        else 
+                        { 
+                        }
+                        //Log.getLogInstance().writeLog(Frame.Content.ToString());
+                        //NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
                     }
                 }
             }

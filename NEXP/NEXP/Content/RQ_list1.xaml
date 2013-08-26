@@ -5,13 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="500" d:DesignWidth="500">
     <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer>
-            <StackPanel MinWidth="200">
-                <TextBlock Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <TextBlock Text="RQ_list1 goes here" />
-            </StackPanel>
-        </ScrollViewer>
+        <Canvas x:Name="canvas_RQ1">
+            <TextBlock Text="Start with a general Question:" Height="40" Width="458" Canvas.Left="10" Canvas.Top="21" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+            <TextBox x:Name="YourQuestion" Height="228" Canvas.Left="10" TextWrapping="Wrap" Width="448" ToolTip="You should fill in your question" Text="{Binding Path=researchQuestion.experimentTitle, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Canvas.Top="81"/>
+            <TextBlock Height="118" Width="448" Canvas.Left="10" Canvas.Top="328" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" >
+                Before designing the experiment,you should be <LineBreak /> clear that  what kind of question you are focused on.
+            </TextBlock>
+        </Canvas>
     </Grid>
 </UserControl>

@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace NEXP.Content
 {
     /// <summary>
-    /// Interaction logic for RQ_list2.xaml
+    /// Interaction logic for Visualization.xaml
     /// </summary>
-    public partial class RQ_list2 : UserControl
+    public partial class Visualization : UserControl
     {
-        public RQ_list2()
+        public Visualization()
         {
             InitializeComponent();
-            BindingProcess();
-        }
-        private void BindingProcess()
-        {
-            this.RQ_experimentConductor.DataContext = NEXP.MainWindow.datas;
-            this.RQ_experimentTitle.DataContext = NEXP.MainWindow.datas;
-            this.RQ_experimentDescription.DataContext = NEXP.MainWindow.datas;
         }
     }
 }

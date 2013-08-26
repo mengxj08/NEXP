@@ -23,6 +23,7 @@ namespace NEXP.Pages
         private DateTime downTime;
         private object downSender;
         private Point downPosition;
+        private int i = 1;
 
         public DetermineVariables()
         {
@@ -52,6 +53,54 @@ namespace NEXP.Pages
                     if (tmp.Name == "BackButton")
                     {
                         NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
+                    }
+                }
+            }
+        }
+        private void OpaqueClickableImage_MouseDown_NextButton(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.downSender = sender;
+                this.downTime = DateTime.Now;
+                this.downPosition = e.GetPosition(sender as Image);
+            }
+        }
+
+        private void OpaqueClickableImage_MouseUp_NextButton(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Released && sender == this.downSender)
+            {
+                TimeSpan timeSinceDown = DateTime.Now - this.downTime;
+                if (timeSinceDown.TotalMilliseconds < 500)
+                {
+                    //MessageBox.Show("Image Click: " + sender.ToString());
+                    NEXP.Utils.OpaqueClickableImage tmp = sender as NEXP.Utils.OpaqueClickableImage;
+
+                    if (tmp.Name == "NextButton")
+                    {
+                        //Log.getLogInstance().writeLog(Frame.Content.ToString());
+                        /*
+                         if (Frame.Content.ToString() == "/Content/RQ_list2.xaml")
+                         {
+                             NavigationCommands.GoToPage.Execute("/Content/RQ_list1.xaml", Frame);
+                         }
+                         */
+                        i++;
+                        i = i % 2;
+                        if (i == 1)
+                        {
+                            NavigationCommands.GoToPage.Execute("/Content/IDV.xaml", Frame);
+                        }
+                        else if (i == 0)
+                        {
+                            NavigationCommands.GoToPage.Execute("/Content/DV.xaml", Frame);
+                        }
+                        else
+                        {
+                        }
+                        //Log.getLogInstance().writeLog(Frame.Content.ToString());
+                        //NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
                     }
                 }
             }

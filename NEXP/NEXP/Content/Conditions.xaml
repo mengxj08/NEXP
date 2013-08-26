@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="NEXP.Content.Conditions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:assembly="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:NEXP" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="SubjectTypes" MethodName="GetValues" ObjectType="{x:Type assembly:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="local:SUBJECTDESIGN"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="keyStrategy" MethodName="GetValues" ObjectType="{x:Type assembly:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="local:COUNTERBALANCE"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+    </UserControl.Resources>
+    <Grid Style="{StaticResource ContentRoot}" Margin="0,10">
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="489" Width="500" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,-9,0,0">
+            <!--
+                <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontSize" Value="25" />
+                    <Setter Property="FontFamily" Value="SketchFlow Print" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="FactorsName" Width="120" Binding="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="SketchFlow Print" FontSize="30" Foreground="#FF267BCF"/>
+                <DataGridTemplateColumn  Width="70" Header="Type">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding subjectDesign}" FontFamily="SketchFlow Print" FontSize="20" Foreground="#FF267BCF"/>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox x:Name="DesignCombobox" ItemsSource="{Binding Source={StaticResource SubjectTypes}}"
+                                              SelectedItem="{Binding Path=subjectDesign}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="160" Header="Between- or Within-">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding counterBalance}" FontFamily="SketchFlow Print" FontSize="20" Foreground="#FF267BCF"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox x:Name="StrategyCombobox" ItemsSource="{Binding Source={StaticResource keyStrategy}}"
+                                              SelectedItem="{Binding Path=counterBalance}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="130" Header="Level" MaxWidth="150" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ListBox x:Name="levellistbox" ItemsSource="{Binding Path=levels}" >
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Label Content="{Binding name}" FontFamily="SketchFlow Print" FontSize="30" Foreground="#FF267BCF"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
