@@ -96,7 +96,7 @@ namespace NEXP
                 iv.counterBalance = (COUNTERBALANCE)Enum.Parse(typeof(COUNTERBALANCE), ivNode.SelectSingleNode("counter_balance").InnerText, true);
                 independentVariables.Add(iv);
             }
-            Log.getLogInstance().writeLog(independentVariables.Count.ToString());
+            //Log.getLogInstance().writeLog(independentVariables.Count.ToString());
             XmlNodeList dvNodeList = variablesNode.SelectNodes("dependent_variable");
             foreach (XmlNode node in dvNodeList)
             {
