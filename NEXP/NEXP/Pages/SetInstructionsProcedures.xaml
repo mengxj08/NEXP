@@ -10,8 +10,8 @@
     <Grid Style="{StaticResource ContentRoot}">
         <Canvas HorizontalAlignment="Left" Height="686" Margin="10,10,0,0" VerticalAlignment="Top" Width="150">
             <Utils:OpaqueClickableImage x:Name="BackButton" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/backButton.png" Height="151" Width="83" Canvas.Top="10" MouseDown="OpaqueClickableImage_MouseDown_backButton" MouseUp="OpaqueClickableImage_MouseUp_backButton"/>
-            <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/sidebar-determinevariable.png" Height="355" Width="150" Canvas.Top="96" />
-            <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/sidebar-bottom.png" Height="409" Width="150" Canvas.Top="193" />
+            <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/sidebar-setinstructionsandprocedures.png" Height="355" Width="150" Canvas.Top="95" />
+            <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/sidebar-bottom.png" Height="409" Width="150" Canvas.Top="179" />
         </Canvas>
         <Canvas HorizontalAlignment="Left" Height="686" Margin="165,10,0,0" VerticalAlignment="Top" Width="543"/>
     </Grid>
