@@ -22,8 +22,8 @@
         </ObjectDataProvider>
 
     </UserControl.Resources>
-    <Grid Style="{StaticResource ContentRoot}" Margin="10,10,22,10">
-        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Margin="0,0,-244,0" VerticalAlignment="Top" Height="470" Width="712" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding}">
+    <Grid Style="{StaticResource ContentRoot}" Margin="0,10">
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="489" Width="500" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,-9,0,0">
             <!--
                 <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -33,8 +33,8 @@
             </DataGrid.ColumnHeaderStyle>
             -->
             <DataGrid.Columns>
-                <DataGridTextColumn Header="FactorsName" Width="180" Binding="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="SketchFlow Print" FontSize="30" Foreground="#FF267BCF"/>
-                <DataGridTemplateColumn  Width="100" Header="Type">
+                <DataGridTextColumn Header="FactorsName" Width="120" Binding="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="SketchFlow Print" FontSize="30" Foreground="#FF267BCF"/>
+                <DataGridTemplateColumn  Width="70" Header="Type">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding subjectDesign}" FontFamily="SketchFlow Print" FontSize="20" Foreground="#FF267BCF"/>
@@ -48,7 +48,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="270" Header="Between- or Within-">
+                <DataGridTemplateColumn Width="160" Header="Between- or Within-">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding counterBalance}" FontFamily="SketchFlow Print" FontSize="20" Foreground="#FF267BCF"/>

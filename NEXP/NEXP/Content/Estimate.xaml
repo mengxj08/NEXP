@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="NEXP.Content.Estimate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <TextBlock Text="No. of trials per condition:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="252" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="23"/>
+        <TextBlock Text="No. of blocks per participant:" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="252" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="23"/>
+        <TextBlock Text="Time cost per trial:" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="252" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="23"/>
+        <TextBlock Text="Min No. of participants:" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" Width="252" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="21"/>
+        <TextBlock Text="Actual No. of participants:" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" Width="252" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="23"/>
+        <TextBlock Text="fee per participant:" HorizontalAlignment="Left" Margin="10,297,0,0" VerticalAlignment="Top" Width="252" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="23" />
+        <TextBox x:Name="trial" HorizontalAlignment="Left" Height="23" Margin="267,10,0,0" TextWrapping="Wrap" Text="{Binding Path=trial, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="91" FontSize="20" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBox x:Name="block" HorizontalAlignment="Left" Height="23" Margin="267,65,0,0" TextWrapping="Wrap" Text="{Binding Path=block, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="91" FontSize="20" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBox x:Name="timePerTrial" HorizontalAlignment="Left" Height="23" Margin="267,122,0,0" TextWrapping="Wrap" Text="{Binding Path=timePerTrial,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="91" FontSize="20" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBox x:Name="actualNum" HorizontalAlignment="Left" Height="23" Margin="267,238,0,0" TextWrapping="Wrap" Text="{Binding Path=actualNum, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="91" FontSize="20" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBox x:Name="feePerParticipant" HorizontalAlignment="Left" Height="23" Margin="267,297,0,0" TextWrapping="Wrap" Text="{Binding Path=feePerParticipant, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="91" FontSize="20" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock Text="Total time cost:" HorizontalAlignment="Left" Margin="10,356,0,0" VerticalAlignment="Top" Width="252" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="21"/>
+        <TextBlock Text="Total payment:" HorizontalAlignment="Left" Margin="10,410,0,0" VerticalAlignment="Top" Width="252" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="21"/>
+        <TextBlock x:Name="totaltimecost" HorizontalAlignment="Left" Margin="267,356,0,0" TextWrapping="Wrap" Text="{Binding Path=totalTimeCost, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="91" Height="21" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock x:Name="totalpayment" HorizontalAlignment="Left" Margin="267,410,0,0" TextWrapping="Wrap" Text="{Binding Path=totalPayment, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="91" Height="21" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock x:Name="minNum" HorizontalAlignment="Left" Margin="267,178,0,0" TextWrapping="Wrap" Text="{Binding Path=minNum, Mode=OneWay}" VerticalAlignment="Top" Width="91" Height="21" RenderTransformOrigin="0.476,-3.032" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock Text="Minutes" HorizontalAlignment="Left" Margin="363,356,0,0" VerticalAlignment="Top" Width="77" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="21"/>
+        <TextBlock Text="Dollars" HorizontalAlignment="Left" Margin="363,410,0,0" VerticalAlignment="Top" Width="77" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="21"/>
+    </Grid>
+</UserControl>
