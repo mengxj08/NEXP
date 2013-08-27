@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,19 @@ namespace NEXP.Content
         public Visualization()
         {
             InitializeComponent();
+
+            //string uri = "http://localhost:8888/Simulation.html";
+            //this.browser.Navigate(new Uri(uri, UriKind.Absolute));
+
+            // Turn on local server here, and turn off in the Finalize().
         }
+
+        // Click the button to generate data to .json file, and transfer to web browser to show the simulation result.
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Utils.GenerateSimulation simulation = new Utils.GenerateSimulation();
+            simulation.ShowSimulation();
+        }
+
     }
 }
