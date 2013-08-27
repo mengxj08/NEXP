@@ -8,28 +8,35 @@
              d:DesignHeight="500" d:DesignWidth="500">
     <Canvas x:Name="canvas_RQ3">
         <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="10" Canvas.Top="89">
-            <ListBox x:Name="compareSolutions" Height="26" Canvas.Left="174" Canvas.Top="89" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding Path=compareSolutions,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  />
+            <ListBox x:Name="compareSolutions" Height="26" Canvas.Left="174" Canvas.Top="89" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding Path=compareSolutions,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  
+                     ToolTip="___(other solutions/products/services)__"/>
         </Border>
         <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="174" Canvas.Top="150">
-            <ListBox x:Name="tasks" Height="26" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding tasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="174" Canvas.Top="150" />
+            <ListBox x:Name="tasks" Height="26" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding tasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="174" Canvas.Top="150" 
+                     ToolTip="___(certain tasks)___"/>
         </Border>
         <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="174" Canvas.Top="299">
-            <ListBox x:Name="measures" Height="26" Canvas.Left="177" Canvas.Top="299" Width="192" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding measures, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <ListBox x:Name="measures" Height="26" Canvas.Left="177" Canvas.Top="299" Width="192" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding measures, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     ToolTip="___(certain terms)___"/>
         </Border >
         <TextBlock Canvas.Left="251" TextWrapping="Wrap" Text="is better than" Canvas.Top="27" Width="213" Height="26" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
-        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="in" Canvas.Top="150" Width="111" Height="26" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="in" Canvas.Top="150" Width="111" Height="26" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
+                   ToolTip="Key insight: &#xa;experiment design need to decide what subset of tasks is appropriate to test."/>
         <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="under" Canvas.Top="222" Width="111" Height="33" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
-        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="based on" Canvas.Top="299" Width="111" Height="40" Style="{StaticResource Heading1}" RenderTransformOrigin="0.505,3.423" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="based on" Canvas.Top="299" Width="148" Height="40" Style="{StaticResource Heading1}" RenderTransformOrigin="0.505,3.423" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
+                   ToolTip="In HCI, we typically use three measures to quantify performance: &#xa;Speed&#xa;Accuracy&#xa;Learnability&#xa;Key insight: need to define testable measures"/>
         <Button Canvas.Left="298" Canvas.Top="420" Width="127" Height="26" Click="Item_Del" Content="Deleting Item"/>
         <TextBox x:Name="Addtext" Height="26" Canvas.Left="136" TextWrapping="Wrap" Canvas.Top="420" Width="93"/>
         <Button Canvas.Left="10" Canvas.Top="420" Width="105" Height="26" Click="Item_Add" Content="Adding Item" RenderTransformOrigin="-1.134,0.846"/>
 
-        <TextBox x:Name="mainSolution" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="27" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=mainSolution, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="context" Height="26" Canvas.Left="174" TextWrapping="Wrap" Canvas.Top="222" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=context, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="mainSolution" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="27" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=mainSolution, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 ToolTip="___(Your solution/product/service)__"/>
+        <TextBox x:Name="context" Height="26" Canvas.Left="174" TextWrapping="Wrap" Canvas.Top="222" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=context, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 ToolTip="___(certain context)___"/>
 
-        <CheckBox x:Name="checkbox1" Canvas.Left="461" Canvas.Top="89" Width="21" RenderTransformOrigin="-0.206,5.294" Checked="checkbox1_checked"/>
-        <CheckBox x:Name="checkbox2" Canvas.Left="461" Canvas.Top="222" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked"/>
-        <CheckBox x:Name="checkbox3" Canvas.Left="461" Canvas.Top="299" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox3_checked"/>
+        <CheckBox x:Name="checkbox1" Canvas.Left="461" Canvas.Top="89" Width="21" RenderTransformOrigin="-0.206,5.294" Checked="checkbox1_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
+        <CheckBox x:Name="checkbox2" Canvas.Left="461" Canvas.Top="222" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
+        <CheckBox x:Name="checkbox3" Canvas.Left="461" Canvas.Top="299" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox3_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
         
     </Canvas>
 </UserControl>

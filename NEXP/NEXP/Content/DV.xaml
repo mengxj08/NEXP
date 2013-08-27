@@ -17,6 +17,8 @@
         <Button Content="Delete Item" HorizontalAlignment="Left" Height="27" Margin="357,367,0,0" VerticalAlignment="Top" Width="101" Click="del_item" RenderTransformOrigin="0.198,0.447"/>
         <TextBox x:Name="addItemText" HorizontalAlignment="Left" Height="27" Margin="134,367,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button Content="Add Item" HorizontalAlignment="Left" Height="27" Margin="10,367,0,0" VerticalAlignment="Top" Width="101" Click="add_item" RenderTransformOrigin="0.198,0.447"/>
-        <TextBlock HorizontalAlignment="Left" Margin="21,10,0,0" TextWrapping="Wrap" Text="Dependent Variables" VerticalAlignment="Top" Height="40" Width="338" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,10,0,0" TextWrapping="Wrap" Text="Dependent Variables" VerticalAlignment="Top" Height="40" Width="338" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
+                   ToolTip="Dependent variable(DV):&#xa;Factors which are measured
+"/>
     </Grid>
 </UserControl>

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="NEXP.Content.MethodTutorials2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:Utils="clr-namespace:NEXP.Utils"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <TextBlock Margin="0,10,10,300" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"> Method 2: Within- Subject Design
+        <LineBreak /><LineBreak /><LineBreak />Recruit the same participants to test all 6 
+        <LineBreak/>conditions (this is also called within-subject 
+        <LineBreak/>design since all conditions are tested within the 
+        <LineBreak/>same subject)
+        </TextBlock>
+        <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/WithinDesign.png" Height="248" Width="369" Canvas.Top="161" Margin="20,156,0,0" />
+    </Grid>
+</UserControl>

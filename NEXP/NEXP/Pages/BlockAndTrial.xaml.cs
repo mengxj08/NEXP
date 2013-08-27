@@ -23,7 +23,7 @@ namespace NEXP.Pages
         private DateTime downTime;
         private object downSender;
         private Point downPosition;
-        private int i = 1;
+        private int content = 1;
         public BlockAndTrial()
         {
             InitializeComponent();
@@ -85,17 +85,17 @@ namespace NEXP.Pages
                              NavigationCommands.GoToPage.Execute("/Content/RQ_list1.xaml", Frame);
                          }
                          */
-                        i++;
-                        i = i % 3;
-                        if (i == 1)
+                        content ++;
+                        content = content % 3;
+                        if (content == 1)
                         {
                             NavigationCommands.GoToPage.Execute("/Content/Estimate.xaml", Frame);
                         }
-                        else if (i == 2)
+                        else if (content == 2)
                         {
                             NavigationCommands.GoToPage.Execute("/Content/Balance.xaml", Frame);
                         }
-                        else if (i == 0)
+                        else if (content == 0)
                         {
                             NavigationCommands.GoToPage.Execute("/Content/Visualization.xaml",Frame);
                         }
