@@ -86,7 +86,7 @@ namespace NEXP.Pages
                          }
                          */
                         content ++;
-                        content = content  % 2;
+                        content = content  % 4;
                         if (content == 0)
                         {
                             NavigationCommands.GoToPage.Execute("/Content/Conditions.xaml", Frame);
@@ -95,9 +95,15 @@ namespace NEXP.Pages
                         {
                             NavigationCommands.GoToPage.Execute("/Content/ConditionsTutorials.xaml", Frame);
                         }
-                        else
+                        else if (content == 2)
                         {
+                            NavigationCommands.GoToPage.Execute("/Content/MethodTutorials1.xaml", Frame);
                         }
+                        else if (content == 3)
+                        {
+                            NavigationCommands.GoToPage.Execute("/Content/MethodTutorials2.xaml", Frame);
+                        }
+                        else { }
                         //Log.getLogInstance().writeLog(Frame.Content.ToString());
                         //NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
                     }
