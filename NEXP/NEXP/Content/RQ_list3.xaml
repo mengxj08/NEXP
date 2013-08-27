@@ -25,9 +25,9 @@
         <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="under" Canvas.Top="222" Width="111" Height="33" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
         <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="based on" Canvas.Top="299" Width="148" Height="40" Style="{StaticResource Heading1}" RenderTransformOrigin="0.505,3.423" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
                    ToolTip="In HCI, we typically use three measures to quantify performance: &#xa;Speed&#xa;Accuracy&#xa;Learnability&#xa;Key insight: need to define testable measures"/>
-        <Button Canvas.Left="298" Canvas.Top="420" Width="127" Height="26" Click="Item_Del" Content="Deleting Item"/>
-        <TextBox x:Name="Addtext" Height="26" Canvas.Left="136" TextWrapping="Wrap" Canvas.Top="420" Width="93"/>
-        <Button Canvas.Left="10" Canvas.Top="420" Width="105" Height="26" Click="Item_Add" Content="Adding Item" RenderTransformOrigin="-1.134,0.846"/>
+        <mui:ModernButton EllipseDiameter="48" EllipseStrokeThickness="2" IconWidth="30" IconHeight="30" IconData="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " Canvas.Left="349" Canvas.Top="420" Width="51" Height="55" Click="Item_Del"/>
+        <TextBox x:Name="Addtext" Height="26" Canvas.Left="103" TextWrapping="Wrap" Canvas.Top="433" Width="122"/>
+        <mui:ModernButton EllipseDiameter="48" EllipseStrokeThickness="2" IconWidth="30" IconHeight="30" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " Canvas.Left="10" Canvas.Top="420" Width="53" Height="55" Click="Item_Add" RenderTransformOrigin="-1.134,0.846"/>
 
         <TextBox x:Name="mainSolution" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="27" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=mainSolution, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  ToolTip="___(Your solution/product/service)__"/>
@@ -37,6 +37,6 @@
         <CheckBox x:Name="checkbox1" Canvas.Left="461" Canvas.Top="89" Width="21" RenderTransformOrigin="-0.206,5.294" Checked="checkbox1_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
         <CheckBox x:Name="checkbox2" Canvas.Left="461" Canvas.Top="222" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
         <CheckBox x:Name="checkbox3" Canvas.Left="461" Canvas.Top="299" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox3_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
-        
+
     </Canvas>
 </UserControl>
