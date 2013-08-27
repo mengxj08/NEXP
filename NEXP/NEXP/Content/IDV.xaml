@@ -13,19 +13,22 @@
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Path=levels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                     <StackPanel Orientation="Horizontal" Margin="4">
-                        <Canvas Margin="0 0 10 10" x:Name="appbar_location_add" Width="30" Height="30" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0">
-                            <Path Width="15" Height="30" Canvas.Left ="0" Canvas.Top="0" Stretch="Fill" Fill="#FF000000" Data="F1 M 26.9167,13.8542L 50.6667,13.8542L 50.6667,39.5833L 26.9167,63.3333L 26.9167,13.8542 Z M 36.4167,19L 36.4167,23.75L 31.6667,23.75L 31.6667,28.5L 36.4167,28.5L 36.4167,33.25L 41.1667,33.25L 41.1667,28.5L 45.9167,28.5L 45.9167,23.75L 41.1667,23.75L 41.1667,19L 36.4167,19 Z " MouseUp="Icon_Add"/>
+                        <Canvas x:Name="Add" Margin="0 0 10 10" Width="30" Height="30" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0"  MouseUp="Icon_Add_MouseUp" MouseDown="Icon_Add_MouseDown">
+                            <Path Width="15" Height="15" Canvas.Left ="0" Canvas.Top="0" Stretch="Fill" Fill="#FF000000" Data="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z "/>
                         </Canvas>
                         <TextBlock Margin="2" FontSize="30" Text="{Binding Path=name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print"/>
-                        <Canvas Margin="10 0 0 10" x:Name="appbar_clear_inverse_reflect_horizontal" Width="30" Height="30" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0">
-                            <Path Width="20" Height="15" Canvas.Right="0" Canvas.Top="0" Stretch="Fill" Fill="#FF000000" Data="F1 M 18.0147,41.5355C 16.0621,39.5829 16.0621,36.4171 18.0147,34.4645L 26.9646,25.5149C 28.0683,24.4113 29,24 31,24L 52,24C 54.7614,24 57,26.2386 57,29L 57,47C 57,49.7614 54.7614,52 52,52L 31,52C 29,52 28.0683,51.589 26.9646,50.4854L 18.0147,41.5355 Z M 47.5281,42.9497L 42.5784,37.9999L 47.5281,33.0502L 44.9497,30.4717L 40,35.4215L 35.0502,30.4717L 32.4718,33.0502L 37.4215,37.9999L 32.4718,42.9497L 35.0502,45.5281L 40,40.5783L 44.9497,45.5281L 47.5281,42.9497 Z " MouseUp="Icon_Del"/>
+                        <Canvas x:Name="Minus" Margin="10 0 0 10" Width="30" Height="30" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0" MouseUp="Icon_Add_MouseUp" MouseDown="Icon_Add_MouseDown">
+                            <Path Width="15" Height="3" Canvas.Right="0" Canvas.Top="5" Stretch="Fill" Fill="#FF000000" Data="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " />
                         </Canvas>
                     </StackPanel>
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
+        <!-- 
         <Button Content="Delete Item" HorizontalAlignment="Left" Height="27" Margin="357,397,0,0" VerticalAlignment="Top" Width="101" Click="del_item" RenderTransformOrigin="0.198,0.447"/>
-        <TextBox x:Name="addItemText" HorizontalAlignment="Left" Height="27" Margin="134,397,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Add Item" HorizontalAlignment="Left" Height="27" Margin="10,397,0,0" VerticalAlignment="Top" Width="101" Click="add_item" RenderTransformOrigin="0.198,0.447"/>
+        -->
+        <TextBox x:Name="addItemText" HorizontalAlignment="Left" Height="34" Margin="159,422,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" FontSize="20" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <mui:ModernButton Click="add_item" ToolTip="Add Independent Variables" EllipseDiameter="48" EllipseStrokeThickness="2" IconWidth="30" IconHeight="30" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " IsEnabled="True" Margin="48,396,367,10" />
+
     </Grid>
 </UserControl>

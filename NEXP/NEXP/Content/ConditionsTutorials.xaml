@@ -10,7 +10,6 @@
         <ScrollViewer>
             <StackPanel MinWidth="200">
                 <TextBlock Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <TextBlock Text="Conditions tutorials goes here" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

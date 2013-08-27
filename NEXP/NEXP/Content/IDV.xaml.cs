@@ -20,6 +20,10 @@ namespace NEXP.Content
     /// </summary>
     public partial class IDV : UserControl
     {
+        private DateTime downTime;
+        private object downSender;
+        private Point downPosition;
+
         public IDV()
         {
             InitializeComponent();
@@ -65,12 +69,13 @@ namespace NEXP.Content
         {
             if (addItemText.Text != "")
             {
-                if (tv.SelectedItem == null)
-                {
+                //if (tv.SelectedItem == null)
+                //{
                     NEXP.IndependentVariable idv = new NEXP.IndependentVariable();
                     idv.name = addItemText.Text;
                     NEXP.MainWindow.datas.independentVariables.Add(idv);
-                }
+                //}
+                    /*
                 else if (tv.Items.IndexOf(tv.SelectedItem) != -1)
                 {
                     NEXP.IndependentVariable selectedIDV = (NEXP.IndependentVariable)tv.SelectedItem;
@@ -81,57 +86,81 @@ namespace NEXP.Content
                 else
                 {
                 }
+                     * */
             }
         }
-        private void Icon_Add(object sender, RoutedEventArgs e)
+        private void Icon_Add_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.downSender = sender;
+                this.downTime = DateTime.Now;
+                this.downPosition = e.GetPosition(sender as Canvas);
+            }
+        }
+        private void Icon_Add_MouseUp(object sender, MouseButtonEventArgs e)
         {
             //Log.getLogInstance().writeLog("click");
-            if (addItemText.Text != "")
+            if (e.LeftButton == MouseButtonState.Released && sender == this.downSender)
             {
-                if (tv.SelectedItem == null)
+                TimeSpan timeSinceDown = DateTime.Now - this.downTime;
+                if (timeSinceDown.TotalMilliseconds < 500)
                 {
-                    NEXP.IndependentVariable idv = new NEXP.IndependentVariable();
-                    idv.name = addItemText.Text;
-                    NEXP.MainWindow.datas.independentVariables.Add(idv);
-                }
-                else if (tv.Items.IndexOf(tv.SelectedItem) != -1)
-                {
-                    NEXP.IndependentVariable selectedIDV = (NEXP.IndependentVariable)tv.SelectedItem;
-                    NEXP.IndependentVariable.Level level = new NEXP.IndependentVariable.Level();
-                    level.name = addItemText.Text;
-                    selectedIDV.levels.Add(level);
-                }
-                else
-                {
-                }
-            }
-        }
-        private void Icon_Del(object sender, RoutedEventArgs e)
-        {
-            if (tv.SelectedItem != null)
-            {
-                //Log.getLogInstance().writeLog((tv.Items.IndexOf(tv.SelectedItem)).ToString());
-
-                if (tv.Items.IndexOf(tv.SelectedItem) != -1)
-                {
-                    NEXP.MainWindow.datas.independentVariables.RemoveAt(tv.Items.IndexOf(tv.SelectedItem));
-                    return;
-                }
-                else
-                {
-                    NEXP.IndependentVariable.Level selectedLevel = (NEXP.IndependentVariable.Level)tv.SelectedItem;
-                    foreach (NEXP.IndependentVariable IDV in NEXP.MainWindow.datas.independentVariables)
+                    System.Windows.Controls.Canvas tmp = sender as System.Windows.Controls.Canvas;
+                    if (tmp.Name == "Add")
                     {
-                        if (IDV.levels.Contains(selectedLevel))
+                        if (addItemText.Text != "")
                         {
-                            //Log.getLogInstance().writeLog("second");
-                            IDV.levels.Remove(selectedLevel);
+                            if (tv.SelectedItem == null)
+                            {
+                                NEXP.IndependentVariable idv = new NEXP.IndependentVariable();
+                                idv.name = addItemText.Text;
+                                NEXP.MainWindow.datas.independentVariables.Add(idv);
+                            }
+                            else if (tv.Items.IndexOf(tv.SelectedItem) != -1)
+                            {
+                                NEXP.IndependentVariable selectedIDV = (NEXP.IndependentVariable)tv.SelectedItem;
+                                NEXP.IndependentVariable.Level level = new NEXP.IndependentVariable.Level();
+                                level.name = addItemText.Text;
+                                selectedIDV.levels.Add(level);
+                            }
+                            else
+                            {
+                            }
                         }
-
                     }
+                    else if (tmp.Name == "Minus")
+                    {
+                        if (tv.SelectedItem != null)
+                        {
+                            //Log.getLogInstance().writeLog((tv.Items.IndexOf(tv.SelectedItem)).ToString());
 
+                            if (tv.Items.IndexOf(tv.SelectedItem) != -1)
+                            {
+                                NEXP.MainWindow.datas.independentVariables.RemoveAt(tv.Items.IndexOf(tv.SelectedItem));
+                                return;
+                            }
+                            else
+                            {
+                                NEXP.IndependentVariable.Level selectedLevel = (NEXP.IndependentVariable.Level)tv.SelectedItem;
+                                foreach (NEXP.IndependentVariable IDV in NEXP.MainWindow.datas.independentVariables)
+                                {
+                                    if (IDV.levels.Contains(selectedLevel))
+                                    {
+                                        //Log.getLogInstance().writeLog("second");
+                                        IDV.levels.Remove(selectedLevel);
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+                    else { 
+                    }
                 }
             }
+            
         }
     }
 }
