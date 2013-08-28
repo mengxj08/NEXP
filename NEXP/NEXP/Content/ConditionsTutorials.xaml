@@ -6,24 +6,24 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
-    <Grid Style="{StaticResource ContentRoot}">
-        <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" TextWrapping="Wrap" Text="Arrange Conditions" VerticalAlignment="Top" Height="40" Width="367" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
-        <TextBlock Margin="171,50,10,364" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" ToolTip="If it is the only independent variable considered, this experiment has two conditions.">From Independent Variables to<LineBreak />Experimental Conditions</TextBlock >
-        <TextBlock Margin="0,111,0,311" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF">Example:<LineBreak />
+    <Grid Style="{StaticResource ContentRoot}" Margin="16,28,16,0">
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Arrange Conditions" VerticalAlignment="Top" Height="40" Width="367" Style="{StaticResource Heading1}" Foreground="#FF267BCF"/>
+        <TextBlock Margin="171,45,10,372" FontSize="20"  Foreground="#FF267BCF" ToolTip="If it is the only independent variable considered, this experiment has two conditions.">From Independent Variables to<LineBreak />Experimental Conditions</TextBlock >
+        <TextBlock Margin="10,100,-10,321" FontSize="20"  Foreground="#FF267BCF">Example:<LineBreak />
         You have:</TextBlock >
-        <TextBlock Margin="20,145,152,290" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF">
+        <TextBlock Margin="20,151,152,296" FontSize="20"  Foreground="#FF267BCF" RenderTransformOrigin="0.5,1.12">
             Independet variables:Technique</TextBlock>
-        <TextBlock Margin="10,303,10,53" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Style="{StaticResource Heading2}">
-         <Bold>
+        <TextBlock Margin="0,342,20,0"  Foreground="#FF267BCF" FontSize="20">
+         
         Therefore, There are 2 (Techniques) x 3 (Menu<LineBreak /> Breadth) = 6 experimental conditions
         The each <LineBreak />unique combination of the different levels of the <LineBreak/>various 
         independent variables (such as earPod, <LineBreak/>4) is an experimental condition.
-         </Bold>
+         
         </TextBlock >
-        <TextBlock Margin="186,171,152,261" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"><Run Text="With 2 levels:"/></TextBlock>
-        <TextBlock Margin="321,171,69,245" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF">earPod<LineBreak />Ipod</TextBlock>
-        <TextBlock Margin="20,213,116,222" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"><Run Text="Independet variables:Menu Breadth"/></TextBlock>
-        <TextBlock Margin="186,239,152,193" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"><Run Text="With 3 levels:"/></TextBlock>
-        <TextBlock Margin="321,239,39,158" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"><Run Text="Breadth:4"/><LineBreak /><Run Text="Breadth:8"/><LineBreak /><Run Text="Breadth:12"/></TextBlock>
+        <TextBlock Margin="186,176,152,256" FontSize="20"  Foreground="#FF267BCF"><Run Text="With 2 levels:"/></TextBlock>
+        <TextBlock Margin="321,176,69,242" FontSize="20"  Foreground="#FF267BCF">earPod<LineBreak />Ipod</TextBlock>
+        <TextBlock Margin="20,230,116,205" FontSize="20"  Foreground="#FF267BCF"><Run Text="Independet variables:Menu Breadth"/></TextBlock>
+        <TextBlock Margin="186,267,152,163" FontSize="20"  Foreground="#FF267BCF"><Run Text="With 3 levels:"/></TextBlock>
+        <TextBlock Margin="321,267,39,130" FontSize="20"  Foreground="#FF267BCF"><Run Text="Breadth:4"/><LineBreak /><Run Text="Breadth:8"/><LineBreak /><Run Text="Breadth:12"/></TextBlock>
     </Grid>
 </UserControl>

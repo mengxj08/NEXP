@@ -8,10 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
     <Grid Style="{StaticResource ContentRoot}">
-        <TextBlock Margin="0,10,10,300" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"> Method 1: Between- Subject Design
-        <LineBreak /><LineBreak /><LineBreak />Recruit 6 participants, one for each condition: <LineBreak />
-        (this is also called between-subject design, <LineBreak />which means the conditions are tested between <LineBreak />different subjects)
+        <TextBlock xml:space="preserve" Margin="0,0,0,315" FontSize="20"  Foreground="#FF267BCF"> Method 1: Between- Subject Design
+        Recruit 6 participants, one for each condition: 
+        (this is also called between-subject design, 
+        which means the conditions are tested between 
+        different subjects)
         </TextBlock>
-        <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/betweenDesign.png" Height="326" Width="161" Canvas.Top="161" Margin="0,130,0,0" />
+        <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/betweenDesign.png" Height="315" Width="158" Canvas.Top="161" Margin="0,141,0,0" />
     </Grid>
 </UserControl>

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="NEXP.Content.Conducting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <TextBlock xml:space="preserve" FontSize="20" Foreground="#FF267BCF">Before the experiment
+    - Have them read and sign the consent form
+    - Explain the goal of the experiment
+        - In a way accessible to users
+        - Be careful about the demand characteristic
+        - Participants biased towards experimenter’s hypothesis
+    - Answer questions
+During the experiment
+    - Stay neutral
+    - Never indicate displeasure with users performance
+After the experiment
+    - Debrief users
+        - Inform users about the goal of the experiment
+    - Answer any questions they have
+        </TextBlock >
+    </Grid>
+</UserControl>

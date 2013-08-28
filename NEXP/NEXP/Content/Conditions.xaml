@@ -34,11 +34,11 @@
             </DataGrid.ColumnHeaderStyle>
             -->
             <DataGrid.Columns>
-                <DataGridTextColumn Header="FactorsName" Width="120" Binding="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="SketchFlow Print" FontSize="30" Foreground="#FF267BCF"/>
+                <DataGridTextColumn Header="FactorsName" Width="120" Binding="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTemplateColumn  Width="70" Header="Type">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding subjectDesign}" FontFamily="SketchFlow Print" FontSize="20" Foreground="#FF267BCF"/>
+                            <TextBlock Text="{Binding subjectDesign}"/>
 
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -52,7 +52,7 @@
                 <DataGridTemplateColumn Width="160" Header="Between- or Within-">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding counterBalance}" FontFamily="SketchFlow Print" FontSize="20" Foreground="#FF267BCF"/>
+                            <TextBlock Text="{Binding counterBalance}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
@@ -68,7 +68,7 @@
                             <ListBox x:Name="levellistbox" ItemsSource="{Binding Path=levels}" >
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
-                                        <Label Content="{Binding name}" FontFamily="SketchFlow Print" FontSize="30" Foreground="#FF267BCF"/>
+                                        <Label Content="{Binding name}"/>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                             </ListBox>

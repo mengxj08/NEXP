@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="NEXP.Content.Notes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <TextBlock xml:space="preserve" FontSize="20" Foreground="#FF267BCF">Always pilot it first!
+    - Reveals unexpected problems
+    - Can’t change experiment design after starting it
+
+Always follow same steps – use a checklist
+
+Get consent from subjects
+
+Debrief subjects afterwards
+        </TextBlock>
+    </Grid>
+</UserControl>
