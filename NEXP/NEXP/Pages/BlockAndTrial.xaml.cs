@@ -86,18 +86,22 @@ namespace NEXP.Pages
                          }
                          */
                         content ++;
-                        content = content % 3;
+                        content = content % 4;
                         if (content == 1)
                         {
-                            NavigationCommands.GoToPage.Execute("/Content/Estimate.xaml", Frame);
+                            NavigationCommands.GoToPage.Execute("/Content/blockTrialTutorial.xaml", Frame);
                         }
                         else if (content == 2)
                         {
-                            NavigationCommands.GoToPage.Execute("/Content/Balance.xaml", Frame);
+                            NavigationCommands.GoToPage.Execute("/Content/Estimate.xaml", Frame);
+                        }
+                        else if (content == 3)
+                        {
+                            NavigationCommands.GoToPage.Execute("/Content/Balance.xaml",Frame);
                         }
                         else if (content == 0)
                         {
-                            NavigationCommands.GoToPage.Execute("/Content/Visualization.xaml",Frame);
+                            NavigationCommands.GoToPage.Execute("/Content/Visualization.xaml", Frame);
                         }
                         else { }
                         //Log.getLogInstance().writeLog(Frame.Content.ToString());
