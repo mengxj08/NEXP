@@ -258,14 +258,14 @@ namespace NEXP.Utils
             }
         }
 
-        private void RotateRight(IList sequence, int count)
+        private static void RotateRight(IList sequence, int count)
         {
             object tmp = sequence[count - 1];
             sequence.RemoveAt(count - 1);
             sequence.Insert(0, tmp);
         }
 
-        private IEnumerable<IList> Permutate(IList sequence, int count)
+        public static IEnumerable<IList> Permutate(IList sequence, int count)
         {
             // http://www.codeproject.com/Articles/43767/A-C-List-Permutation-Iterator
 
