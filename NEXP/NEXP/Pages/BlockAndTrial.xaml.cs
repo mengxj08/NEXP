@@ -93,11 +93,11 @@ namespace NEXP.Pages
                         }
                         else if (content == 2)
                         {
-                            NavigationCommands.GoToPage.Execute("/Content/Estimate.xaml", Frame);
+                            NavigationCommands.GoToPage.Execute("/Content/Balance.xaml", Frame);
                         }
                         else if (content == 3)
                         {
-                            NavigationCommands.GoToPage.Execute("/Content/Balance.xaml",Frame);
+                            NavigationCommands.GoToPage.Execute("/Content/Estimate.xaml", Frame);
                         }
                         else if (content == 0)
                         {

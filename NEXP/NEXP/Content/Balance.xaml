@@ -7,11 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
     <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer>
-            <StackPanel MinWidth="200">
-                <TextBlock Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <TextBlock Text="Balance goes here" />
-            </StackPanel>
-        </ScrollViewer>
+        <TextBlock  xml:space="preserve" FontSize="20"  Foreground="#FF267BCF">Step 4.1: 
+    - estimate the time for each trial (typically at least 
+      3 trials per condition) 
+Step 4.2: 
+    - estimate the time for each block
+Step 4.3: 
+    - balance the trials and blocks so that the main 
+      part of the experiment is within 45 minutes 
+Step 4.4: 
+    - combine with the condition arrangement
+        </TextBlock>
     </Grid>
 </UserControl>

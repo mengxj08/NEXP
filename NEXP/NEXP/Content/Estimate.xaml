@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="500" Loaded="Windows_Loaded">
     <Grid Style="{StaticResource ContentRoot}">
         <TextBlock Text="No. of trials per condition:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="283" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="23"/>
         <TextBlock Text="No. of blocks per participant:" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="283" FontSize="16" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" Height="23"/>

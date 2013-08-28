@@ -37,5 +37,9 @@ namespace NEXP.Content
             totalpayment.DataContext = NEXP.MainWindow.datas.arrangement;
             totaltimecost.DataContext = NEXP.MainWindow.datas.arrangement;
         }
+        private void Windows_Loaded(object sender, RoutedEventArgs e)
+        { 
+            //Caluculate the minNum of participants
+        }
     }
 }

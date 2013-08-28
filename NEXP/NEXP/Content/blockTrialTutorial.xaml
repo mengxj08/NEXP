@@ -6,15 +6,15 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              xmlns:Utils="clr-namespace:NEXP.Utils"
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="500">
+             d:DesignHeight="560" d:DesignWidth="500">
     <Grid Style="{StaticResource ContentRoot}" Margin="0">
-        <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/TrialAndBlock.png" Height="399" Width="500" Canvas.Top="161" />
-        <TextBlock Margin="0,446,0,-21" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF">Trial<LineBreak />
-            A single repetition of a single condition/cell<LineBreak />
-            A number of trials are used to increase reliability<LineBreak />
-            Block* <LineBreak/>
-            An entire section of the experiment<LineBreak/>
-            Repeated to analyze learning
+        <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/TrialAndBlock.png" Height="404" Width="500" Canvas.Top="161" />
+        <TextBlock xml:space="preserve" Margin="0,404,0,0" FontSize="16" Foreground="#FF267BCF">Trial
+A single repetition of a single condition/cell
+A number of trials are used to increase reliability
+Block* 
+An entire section of the experiment
+Repeated to analyze learning
         </TextBlock>
     </Grid>
 </UserControl>

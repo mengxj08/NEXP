@@ -12,7 +12,7 @@
                 ToolTip=
                "Step 1.1 Start with a general question&#xa;Step 1.2 Define target population&#xa;Step 1.3 Define task(s)&#xa;Step 1.4 Define measure(s)&#xa;Step 1.5 Define factor(s)" />
             <TextBox x:Name="YourQuestion" Height="228" Canvas.Left="10" TextWrapping="Wrap" Width="448" ToolTip="You should fill in your question" Text="{Binding Path=researchQuestion.experimentTitle, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Canvas.Top="81"/>
-            <TextBlock Height="118" Width="448" Canvas.Left="10" Canvas.Top="328" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF" >
+            <TextBlock Height="118" Width="468" Canvas.Top="328" FontSize="20" Foreground="#FF267BCF" >
                 Before designing the experiment,you should be <LineBreak /> clear that  what kind of question you are focused on.
             </TextBlock>
         </Canvas>

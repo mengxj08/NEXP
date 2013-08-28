@@ -371,7 +371,7 @@ namespace NEXP
 
             public Hypothesis()
             {
-                mainSolution = " ";
+                mainSolution = "";
                 compareSolutions = new ObservableCollection<String>();
                 tasks = new ObservableCollection<String>();
                 measures = new ObservableCollection<String>();
@@ -535,7 +535,22 @@ namespace NEXP
 
     public class Arrangement : ViewModelBase
     {
-        public int minNum { get; set; }
+        private int _minNum;
+        public int minNum 
+        {
+            get
+            {
+                return this._minNum;
+            }
+            set
+            {
+                if (value != this.minNum)
+                {
+                    this._minNum = value;
+                    this.onPropertyChanged("minNum");
+                }
+            }
+        }
         private int _actualNum;
         public int actualNum 
         {
