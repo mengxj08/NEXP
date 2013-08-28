@@ -8,12 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
     <Grid Style="{StaticResource ContentRoot}">
-        <TextBlock Margin="0,10,10,300" Style="{StaticResource Heading2}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"> Method 2: Within- Subject Design
-        <LineBreak /><LineBreak /><LineBreak />Recruit the same participants to test all 6 
-        <LineBreak/>conditions (this is also called within-subject 
-        <LineBreak/>design since all conditions are tested within the 
-        <LineBreak/>same subject)
+        <TextBlock xml:space="preserve" Margin="0,0,0,310" FontSize="20" Foreground="#FF267BCF"> Method 2: Within- Subject Design
+        Recruit the same participants to test all 6 
+        conditions (this is also called within-subject 
+        design since all conditions are tested within the 
+        same subject)
         </TextBlock>
-        <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/WithinDesign.png" Height="248" Width="369" Canvas.Top="161" Margin="20,156,0,0" />
+        <Utils:OpaqueClickableImage HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,../ImageSources/WithinDesign.png" Height="305" Width="439" Canvas.Top="161" Margin="0,151,0,0" />
     </Grid>
 </UserControl>
