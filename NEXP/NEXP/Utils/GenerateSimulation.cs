@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace NEXP.Utils
 
         public GenerateSimulation()
         {
-            dataPath = @"C:\Users\workshop\Data\";
+            dataPath = Directory.GetCurrentDirectory() + "\\";
             overall = new List<List<List<string>>>();
             individual = new List<List<List<string>>>();
 
