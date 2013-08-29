@@ -23,7 +23,7 @@ namespace NEXP.Pages
         private DateTime downTime;
         private object downSender;
         private Point downPosition;
-        private int content = 1;
+        private int CurrentPage = 1;
         public BlockAndTrial()
         {
             InitializeComponent();
@@ -75,37 +75,46 @@ namespace NEXP.Pages
                 {
                     //MessageBox.Show("Image Click: " + sender.ToString());
                     NEXP.Utils.OpaqueClickableImage tmp = sender as NEXP.Utils.OpaqueClickableImage;
-
+                    int pageNum = 4;
                     if (tmp.Name == "NextButton")
                     {
-                        //Log.getLogInstance().writeLog(Frame.Content.ToString());
-                        /*
-                         if (Frame.Content.ToString() == "/Content/RQ_list2.xaml")
-                         {
-                             NavigationCommands.GoToPage.Execute("/Content/RQ_list1.xaml", Frame);
-                         }
-                         */
-                        content ++;
-                        content = content % 4;
-                        if (content == 1)
+                        if (CurrentPage < pageNum) CurrentPage++;
+                        switch (CurrentPage)
                         {
-                            NavigationCommands.GoToPage.Execute("/Content/blockTrialTutorial.xaml", Frame);
+                            case 1:
+                                NavigationCommands.GoToPage.Execute("/Content/blockTrialTutorial.xaml", Frame);
+                                break;
+                            case 2:
+                                NavigationCommands.GoToPage.Execute("/Content/Balance.xaml", Frame);
+                                break;
+                            case 3:
+                                NavigationCommands.GoToPage.Execute("/Content/Estimate.xaml", Frame);
+                                break;
+                            case 4:
+                                NavigationCommands.GoToPage.Execute("/Content/Visualization.xaml", Frame);
+                                break;
                         }
-                        else if (content == 2)
-                        {
-                            NavigationCommands.GoToPage.Execute("/Content/Balance.xaml", Frame);
-                        }
-                        else if (content == 3)
-                        {
-                            NavigationCommands.GoToPage.Execute("/Content/Estimate.xaml", Frame);
-                        }
-                        else if (content == 0)
-                        {
-                            NavigationCommands.GoToPage.Execute("/Content/Visualization.xaml", Frame);
-                        }
-                        else { }
                         //Log.getLogInstance().writeLog(Frame.Content.ToString());
                         //NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
+                    }
+                    else if (tmp.Name == "BackButton")
+                    {
+                        if (CurrentPage > 1) CurrentPage--;
+                        switch (CurrentPage)
+                        {
+                            case 1:
+                                NavigationCommands.GoToPage.Execute("/Content/blockTrialTutorial.xaml", Frame);
+                                break;
+                            case 2:
+                                NavigationCommands.GoToPage.Execute("/Content/Balance.xaml", Frame);
+                                break;
+                            case 3:
+                                NavigationCommands.GoToPage.Execute("/Content/Estimate.xaml", Frame);
+                                break;
+                            case 4:
+                                NavigationCommands.GoToPage.Execute("/Content/Visualization.xaml", Frame);
+                                break;
+                        }
                     }
                 }
             }

@@ -23,7 +23,7 @@ namespace NEXP.Pages
         private DateTime downTime;
         private object downSender;
         private Point downPosition;
-        private int content = 1;
+        private int CurrentPage = 1;
 
         public DetermineVariables()
         {
@@ -76,31 +76,35 @@ namespace NEXP.Pages
                 {
                     //MessageBox.Show("Image Click: " + sender.ToString());
                     NEXP.Utils.OpaqueClickableImage tmp = sender as NEXP.Utils.OpaqueClickableImage;
-
+                    int pageNum = 2;
                     if (tmp.Name == "NextButton")
                     {
-                        //Log.getLogInstance().writeLog(Frame.Content.ToString());
-                        /*
-                         if (Frame.Content.ToString() == "/Content/RQ_list2.xaml")
-                         {
-                             NavigationCommands.GoToPage.Execute("/Content/RQ_list1.xaml", Frame);
-                         }
-                         */
-                        content ++;
-                        content = content % 2;
-                        if (content == 1)
+                        if (CurrentPage < pageNum) CurrentPage++;
+                        switch (CurrentPage)
                         {
-                            NavigationCommands.GoToPage.Execute("/Content/IDV.xaml", Frame);
-                        }
-                        else if (content == 0)
-                        {
-                            NavigationCommands.GoToPage.Execute("/Content/DV.xaml", Frame);
-                        }
-                        else
-                        {
+                            case 1:
+                                NavigationCommands.GoToPage.Execute("/content/IDV.xaml", Frame);
+                                break;
+                            case 2:
+                                NavigationCommands.GoToPage.Execute("/content/DV.xaml", Frame);
+                                break;       
                         }
                         //Log.getLogInstance().writeLog(Frame.Content.ToString());
                         //NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
+
+                    }
+                    else if (tmp.Name == "BackButton")
+                    {
+                        if (CurrentPage > 1) CurrentPage--;
+                        switch (CurrentPage)
+                        {
+                            case 1:
+                                NavigationCommands.GoToPage.Execute("/content/IDV.xaml", Frame);
+                                break;
+                            case 2:
+                                NavigationCommands.GoToPage.Execute("/content/DV.xaml", Frame);
+                                break;
+                        }
                     }
                 }
             }
