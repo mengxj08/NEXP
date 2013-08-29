@@ -61,7 +61,14 @@ namespace NEXP
                 researchQuestion.hypothesis.tasks.Add(task);
             }
             // Initiate context.
-            researchQuestion.hypothesis.context = researchQuestionNode.SelectSingleNode("hypothesis/context").InnerText;
+            XmlNode contextsNode = researchQuestionNode.SelectSingleNode("hypothesis/contexts");
+            XmlNodeList contextsNodeList = contextsNode.SelectNodes("context");
+            foreach (XmlNode node in contextsNodeList)
+            {
+                string context = node.InnerText;
+                researchQuestion.hypothesis.contexts.Add(context);
+            }
+
             // Initiate measures.
             XmlNode measuresNode = researchQuestionNode.SelectSingleNode("hypothesis/measures");
             XmlNodeList measuresNodeList = measuresNode.SelectNodes("measure");
@@ -136,6 +143,7 @@ namespace NEXP
             NEXP.MainWindow.datas.researchQuestion.hypothesis.compareSolutions.Clear();
             NEXP.MainWindow.datas.researchQuestion.hypothesis.measures.Clear();
             NEXP.MainWindow.datas.researchQuestion.hypothesis.tasks.Clear();
+            NEXP.MainWindow.datas.researchQuestion.hypothesis.contexts.Clear();
 
             NEXP.MainWindow.datas.independentVariables.Clear();
             NEXP.MainWindow.datas.dependentVariables.Clear();
@@ -179,7 +187,13 @@ namespace NEXP
                     writer.WriteElementString("task", task);
                 }
                 writer.WriteEndElement();
-                writer.WriteElementString("context", researchQuestion.hypothesis.context);
+                writer.WriteStartElement("contexts");
+                foreach (string context in researchQuestion.hypothesis.contexts)
+                {
+                    writer.WriteElementString("context", context);
+                }
+                writer.WriteEndElement();
+
                 writer.WriteStartElement("measures");
                 foreach (string measure in researchQuestion.hypothesis.measures)
                 {
@@ -349,22 +363,24 @@ namespace NEXP
             public ObservableCollection<String> compareSolutions { get; set; }
             public ObservableCollection<String> tasks { get; set; }
 
-            private string _context;
-            public string context 
-            {
-                get
-                {
-                    return this._context;
-                }
-                set
-                {
-                    if (value != this.context)
-                    {
-                        this._context = value;
-                        onPropertyChanged("context");
-                    }
-                }
-            }
+            public ObservableCollection<String> contexts { get; set; }
+
+            //private string _context;
+            //public string context 
+            //{
+            //    get
+            //    {
+            //        return this._context;
+            //    }
+            //    set
+            //    {
+            //        if (value != this.context)
+            //        {
+            //            this._context = value;
+            //            onPropertyChanged("context");
+            //        }
+            //    }
+            //}
 
             public ObservableCollection<String> measures { get; set; }
             public string targetPopulation { get; set; }
