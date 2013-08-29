@@ -96,7 +96,7 @@ namespace NEXP.Pages
                         //NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
 
                     }
-                    else if (tmp.Name == "BackButton")
+                    else if (tmp.Name == "NewBackButton")
                     {
                         if (CurrentPage > 1) CurrentPage--;
                         switch (CurrentPage)
