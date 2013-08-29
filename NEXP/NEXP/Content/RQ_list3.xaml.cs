@@ -36,76 +36,64 @@ namespace NEXP.Content
         }
         private void Item_Add(object sender, RoutedEventArgs e)
         {
-            if (Addtext.Text == "") return;
-            if (checkbox1.IsChecked == true)
+            if (Addtext.Text == "")
+            {
+                //System.Windows.MessageBox.Show("error");
+                MessageBoxButton btn = MessageBoxButton.OK;
+                FirstFloor.ModernUI.Windows.Controls.ModernDialog.ShowMessage("You should fill in the Input TextArea below before adding!","Error Message",btn);
+                return;
+            }
+            FirstFloor.ModernUI.Windows.Controls.ModernButton tmp = sender as FirstFloor.ModernUI.Windows.Controls.ModernButton;
+
+            if (tmp.Name == "Add_compareSolutions")
             {
                 NEXP.MainWindow.datas.researchQuestion.hypothesis.compareSolutions.Add(Addtext.Text);
             }
-            else if (checkbox2.IsChecked == true)
+            else if (tmp.Name == "Add_tasks")
             {
                 NEXP.MainWindow.datas.researchQuestion.hypothesis.tasks.Add(Addtext.Text);
             }
-            else if (checkbox3.IsChecked == true)
+            else if (tmp.Name == "Add_measures")
             {
                 NEXP.MainWindow.datas.researchQuestion.hypothesis.measures.Add(Addtext.Text);
             }
-            else if (checkbox4.IsChecked == true)
+            else if (tmp.Name == "Add_contexts")
             {
                 NEXP.MainWindow.datas.researchQuestion.hypothesis.contexts.Add(Addtext.Text);
             }
             else 
             { }
-
         }
         private void Item_Del(object sender, RoutedEventArgs e)
         {
-            if (checkbox1.IsChecked == true)
+            FirstFloor.ModernUI.Windows.Controls.ModernButton tmp = sender as FirstFloor.ModernUI.Windows.Controls.ModernButton;
+
+            if (tmp.Name == "Del_compareSolutions")
             {
                 if (compareSolutions.SelectedItem != null)
                     NEXP.MainWindow.datas.researchQuestion.hypothesis.compareSolutions.RemoveAt(compareSolutions.Items.IndexOf(compareSolutions.SelectedItem));
+                compareSolutions.SelectedIndex = 0;
             }
-            else if (checkbox2.IsChecked == true)
+            else if (tmp.Name == "Del_tasks")
             {
                 if (tasks.SelectedItem != null)
                     NEXP.MainWindow.datas.researchQuestion.hypothesis.tasks.RemoveAt(tasks.Items.IndexOf(tasks.SelectedItem));
+                tasks.SelectedIndex = 0;
             }
-            else if (checkbox3.IsChecked == true)
+            else if (tmp.Name == "Del_measures")
             {
                 if (measures.SelectedItem != null)
                     NEXP.MainWindow.datas.researchQuestion.hypothesis.measures.RemoveAt(measures.Items.IndexOf(measures.SelectedItem));
+                measures.SelectedIndex = 0;
             }
-            else if (checkbox4.IsChecked == true)
+            else if (tmp.Name == "Del_contexts")
             {
                 if (contexts.SelectedItem != null)
                     NEXP.MainWindow.datas.researchQuestion.hypothesis.contexts.RemoveAt(contexts.Items.IndexOf(contexts.SelectedItem));
+                contexts.SelectedIndex = 0;
             }
             else
             { }
-        }
-        private void checkbox1_checked(object sender, RoutedEventArgs e)
-        {
-            checkbox2.IsChecked = false;
-            checkbox3.IsChecked = false;
-            checkbox4.IsChecked = false;
-
-        }
-        private void checkbox2_checked(object sender, RoutedEventArgs e)
-        {
-            checkbox1.IsChecked = false;
-            checkbox3.IsChecked = false;
-            checkbox4.IsChecked = false;
-        }
-        private void checkbox3_checked(object sender, RoutedEventArgs e)
-        {
-            checkbox1.IsChecked = false;
-            checkbox2.IsChecked = false;
-            checkbox4.IsChecked = false;
-        }
-        private void checkbox4_checked(object sender, RoutedEventArgs e)
-        {
-            checkbox1.IsChecked = false;
-            checkbox2.IsChecked = false;
-            checkbox3.IsChecked = false;
         }
     }
 }

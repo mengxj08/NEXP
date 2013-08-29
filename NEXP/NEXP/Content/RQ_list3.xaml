@@ -7,42 +7,42 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
     <Canvas x:Name="canvas_RQ3">
-        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="10" Canvas.Top="89">
-            <ListBox x:Name="compareSolutions" Height="26" Canvas.Left="174" Canvas.Top="89" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding Path=compareSolutions,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  
+        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Top="57">
+            <ListBox x:Name="compareSolutions" Height="60" Canvas.Left="174" Canvas.Top="89" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Auto" ItemsSource="{Binding Path=compareSolutions,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  
                      ToolTip="___(other solutions/products/services)__"/>
         </Border>
-        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="174" Canvas.Top="150">
-            <ListBox x:Name="tasks" Height="26" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding tasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="174" Canvas.Top="150" 
+        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Top="155">
+            <ListBox x:Name="tasks" Height="60" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding tasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="174" Canvas.Top="150" 
                      ToolTip="___(certain tasks)___"/>
         </Border>
-        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="174" Canvas.Top="222">
-            <ListBox x:Name="contexts" Height="26" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding contexts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="174" Canvas.Top="150" 
+        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Top="259">
+            <ListBox x:Name="contexts" Height="60" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding contexts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="174" Canvas.Top="150" 
                      ToolTip="___(certain contexts)___"/>
         </Border>
-        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="174" Canvas.Top="299">
-            <ListBox x:Name="measures" Height="26" Canvas.Left="177" Canvas.Top="299" Width="192" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding measures, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Top="367" Width="197">
+            <ListBox x:Name="measures" Height="60" Canvas.Left="177" Canvas.Top="299" Width="192" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding measures, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                      ToolTip="___(certain terms)___"/>
         </Border >
-        <TextBlock Canvas.Left="251" TextWrapping="Wrap" Text="is better than" Canvas.Top="27" Width="213" Height="26" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
-        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="in" Canvas.Top="150" Width="111" Height="26" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
+        <TextBlock Canvas.Left="254" TextWrapping="Wrap" Text="is better than" Width="213" Height="26" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock Canvas.Left="254" TextWrapping="Wrap" Text="in" Canvas.Top="80" Width="111" Height="26" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
                    ToolTip="Key insight: &#xa;experiment design need to decide what subset of tasks is appropriate to test."/>
-        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="under" Canvas.Top="222" Width="111" Height="33" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
-        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="based on" Canvas.Top="299" Width="148" Height="40" Style="{StaticResource Heading1}" RenderTransformOrigin="0.505,3.423" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
+        <TextBlock Canvas.Left="254" TextWrapping="Wrap" Text="under" Canvas.Top="164" Width="111" Height="33" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
+        <TextBlock Canvas.Left="254" TextWrapping="Wrap" Text="based on" Canvas.Top="270" Width="148" Height="40" Style="{StaticResource Heading1}" RenderTransformOrigin="0.505,3.423" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
                    ToolTip="In HCI, we typically use three measures to quantify performance: &#xa;Speed&#xa;Accuracy&#xa;Learnability&#xa;Key insight: need to define testable measures"/>
-        <mui:ModernButton EllipseDiameter="48" EllipseStrokeThickness="2" IconWidth="30" IconHeight="30" IconData="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " Canvas.Left="349" Canvas.Top="420" Width="51" Height="55" Click="Item_Del"/>
-        <TextBox x:Name="Addtext" Height="26" Canvas.Left="103" TextWrapping="Wrap" Canvas.Top="433" Width="122"/>
-        <mui:ModernButton EllipseDiameter="48" EllipseStrokeThickness="2" IconWidth="30" IconHeight="30" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " Canvas.Left="10" Canvas.Top="420" Width="53" Height="55" Click="Item_Add" RenderTransformOrigin="-1.134,0.846"/>
+        <mui:ModernButton x:Name="Del_compareSolutions" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " Canvas.Left="202" Canvas.Top="100" Width="19" Height="19" Click="Item_Del"/>
+        <TextBox x:Name="Addtext" Height="42" Canvas.Left="260" TextWrapping="Wrap" Canvas.Top="450" Width="222"/>
+        <mui:ModernButton x:Name="Add_compareSolutions" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " Canvas.Left="202" Canvas.Top="57" Width="19" Height="19" Click="Item_Add" RenderTransformOrigin="-1.134,0.846"/>
 
-        <TextBox x:Name="mainSolution" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="27" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=mainSolution, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+        <TextBox x:Name="mainSolution" Height="26" TextWrapping="Wrap" Width="197" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=mainSolution, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  ToolTip="___(Your solution/product/service)__"/>
-        <!--
-        <TextBox x:Name="context" Height="26" Canvas.Left="174" TextWrapping="Wrap" Canvas.Top="222" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=context, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                 ToolTip="___(certain context)___"/>
-         -->
-        <CheckBox x:Name="checkbox1" Canvas.Left="461" Canvas.Top="89" Width="21" RenderTransformOrigin="-0.206,5.294" Checked="checkbox1_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
-        <CheckBox x:Name="checkbox2" Canvas.Left="461" Canvas.Top="150" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
-        <CheckBox x:Name="checkbox3" Canvas.Left="461" Canvas.Top="299" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox3_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
-        <CheckBox x:Name="checkbox4" Canvas.Left="461" Canvas.Top="222" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox4_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
+        <TextBlock Canvas.Left="93" TextWrapping="Wrap" Text="Input Text:" Canvas.Top="450" Width="162" Height="40" Style="{StaticResource Heading1}" RenderTransformOrigin="0.505,3.423" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
+        	ToolTip="Input Text Area"/>
+        <mui:ModernButton x:Name="Add_tasks" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " Canvas.Left="202" Canvas.Top="155" Width="19" Height="19" Click="Item_Add" RenderTransformOrigin="-1.134,0.846"/>
+        <mui:ModernButton x:Name="Add_contexts" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " Canvas.Left="202" Canvas.Top="259" Width="19" Height="19" Click="Item_Add" RenderTransformOrigin="-1.134,0.846"/>
+        <mui:ModernButton x:Name="Add_measures" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " Canvas.Left="202" Canvas.Top="367" Width="19" Height="19" Click="Item_Add" RenderTransformOrigin="-1.134,0.846"/>
+        <mui:ModernButton x:Name="Del_tasks" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " Canvas.Left="202" Canvas.Top="198" Width="19" Height="19" Click="Item_Del"/>
+        <mui:ModernButton x:Name="Del_contexts" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " Canvas.Left="202" Canvas.Top="302" Width="19" Height="19" Click="Item_Del"/>
+        <mui:ModernButton x:Name="Del_measures" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " Canvas.Left="202" Canvas.Top="410" Width="19" Height="19" Click="Item_Del"/>
 
     </Canvas>
 </UserControl>
