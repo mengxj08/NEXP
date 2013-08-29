@@ -32,7 +32,7 @@ namespace NEXP.Content
             measures.DataContext = NEXP.MainWindow.datas.researchQuestion.hypothesis;
             tasks.DataContext = NEXP.MainWindow.datas.researchQuestion.hypothesis;
             mainSolution.DataContext = NEXP.MainWindow.datas.researchQuestion.hypothesis;
-            context.DataContext = NEXP.MainWindow.datas.researchQuestion.hypothesis;
+            contexts.DataContext = NEXP.MainWindow.datas.researchQuestion.hypothesis;
         }
         private void Item_Add(object sender, RoutedEventArgs e)
         {
@@ -49,7 +49,11 @@ namespace NEXP.Content
             {
                 NEXP.MainWindow.datas.researchQuestion.hypothesis.measures.Add(Addtext.Text);
             }
-            else
+            else if (checkbox4.IsChecked == true)
+            {
+                NEXP.MainWindow.datas.researchQuestion.hypothesis.contexts.Add(Addtext.Text);
+            }
+            else 
             { }
 
         }
@@ -70,6 +74,11 @@ namespace NEXP.Content
                 if (measures.SelectedItem != null)
                     NEXP.MainWindow.datas.researchQuestion.hypothesis.measures.RemoveAt(measures.Items.IndexOf(measures.SelectedItem));
             }
+            else if (checkbox4.IsChecked == true)
+            {
+                if (contexts.SelectedItem != null)
+                    NEXP.MainWindow.datas.researchQuestion.hypothesis.contexts.RemoveAt(contexts.Items.IndexOf(contexts.SelectedItem));
+            }
             else
             { }
         }
@@ -77,16 +86,26 @@ namespace NEXP.Content
         {
             checkbox2.IsChecked = false;
             checkbox3.IsChecked = false;
+            checkbox4.IsChecked = false;
+
         }
         private void checkbox2_checked(object sender, RoutedEventArgs e)
         {
             checkbox1.IsChecked = false;
             checkbox3.IsChecked = false;
+            checkbox4.IsChecked = false;
         }
         private void checkbox3_checked(object sender, RoutedEventArgs e)
         {
             checkbox1.IsChecked = false;
             checkbox2.IsChecked = false;
+            checkbox4.IsChecked = false;
+        }
+        private void checkbox4_checked(object sender, RoutedEventArgs e)
+        {
+            checkbox1.IsChecked = false;
+            checkbox2.IsChecked = false;
+            checkbox3.IsChecked = false;
         }
     }
 }
