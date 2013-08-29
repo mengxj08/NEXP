@@ -390,6 +390,7 @@ namespace NEXP
                 //mainSolution = "";
                 compareSolutions = new ObservableCollection<String>();
                 tasks = new ObservableCollection<String>();
+                contexts = new ObservableCollection<String>();
                 measures = new ObservableCollection<String>();
             }
             /*
