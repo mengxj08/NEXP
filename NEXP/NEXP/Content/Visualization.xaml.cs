@@ -55,5 +55,10 @@ namespace NEXP.Content
             }
         }
 
+        ~Visualization()
+        {
+            cmdProcess.CloseMainWindow();
+            cmdProcess.Close();
+        }
     }
 }
