@@ -15,6 +15,10 @@
             <ListBox x:Name="tasks" Height="26" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding tasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="174" Canvas.Top="150" 
                      ToolTip="___(certain tasks)___"/>
         </Border>
+        <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="174" Canvas.Top="222">
+            <ListBox x:Name="contexts" Height="26" Width="195" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding contexts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="174" Canvas.Top="150" 
+                     ToolTip="___(certain contexts)___"/>
+        </Border>
         <Border BorderBrush="#FF267BCF" BorderThickness="1" Canvas.Left="174" Canvas.Top="299">
             <ListBox x:Name="measures" Height="26" Canvas.Left="177" Canvas.Top="299" Width="192" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding measures, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                      ToolTip="___(certain terms)___"/>
@@ -31,12 +35,14 @@
 
         <TextBox x:Name="mainSolution" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="27" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=mainSolution, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  ToolTip="___(Your solution/product/service)__"/>
+        <!--
         <TextBox x:Name="context" Height="26" Canvas.Left="174" TextWrapping="Wrap" Canvas.Top="222" Width="195" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=context, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  ToolTip="___(certain context)___"/>
-
+         -->
         <CheckBox x:Name="checkbox1" Canvas.Left="461" Canvas.Top="89" Width="21" RenderTransformOrigin="-0.206,5.294" Checked="checkbox1_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
         <CheckBox x:Name="checkbox2" Canvas.Left="461" Canvas.Top="150" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
         <CheckBox x:Name="checkbox3" Canvas.Left="461" Canvas.Top="299" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox3_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
+        <CheckBox x:Name="checkbox4" Canvas.Left="461" Canvas.Top="222" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox4_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
 
     </Canvas>
 </UserControl>

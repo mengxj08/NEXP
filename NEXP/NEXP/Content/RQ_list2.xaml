@@ -11,8 +11,8 @@
             <TextBlock Text="Experiment Name:" Canvas.Top="19" Height="42" Width="291" Style="{StaticResource Heading1}" Canvas.Left="10" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
             <TextBlock  Text="Author:" Canvas.Top="159" Height="35" Width="266" Style="{StaticResource Heading1}" Canvas.Left="10" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
             <TextBlock Text="Description:" Canvas.Top="278" Height="43" Width="266" Style="{StaticResource Heading1}" RenderTransformOrigin="0.439,2.958" Canvas.Left="10" FontFamily="SketchFlow Print" Foreground="#FF267BCF"/>
-            <TextBox x:Name="RQ_experimentTitle" Height="24" Canvas.Left="63" TextWrapping="Wrap" Width="305" Canvas.Top="78" Text="{Binding Path=researchQuestion.experimentTitle, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox x:Name="RQ_experimentConductor" Height="24" Canvas.Left="63" TextWrapping="Wrap" Width="305" Canvas.Top="350" Text="{Binding Path=researchQuestion.experimentConductor,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="RQ_experimentTitle" Height="58" Canvas.Left="63" TextWrapping="Wrap" Width="305" Canvas.Top="78" Text="{Binding Path=researchQuestion.experimentTitle, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="RQ_experimentConductor" Height="96" Canvas.Left="63" TextWrapping="Wrap" Width="305" Canvas.Top="350" Text="{Binding Path=researchQuestion.experimentConductor,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
             <TextBox x:Name="RQ_experimentDescription" Height="24" Canvas.Left="63" TextWrapping="Wrap" Width="305" Canvas.Top="211" Text="{Binding Path=researchQuestion.experimentDescription,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
         </Canvas>
     </Grid>

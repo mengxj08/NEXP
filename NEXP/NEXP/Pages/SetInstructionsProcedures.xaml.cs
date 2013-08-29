@@ -23,7 +23,7 @@ namespace NEXP.Pages
         private DateTime downTime;
         private object downSender;
         private Point downPosition;
-        private int content = 1;
+        private int CurrentPage = 1;
         public SetInstructionsProcedures()
         {
             InitializeComponent();
@@ -76,33 +76,41 @@ namespace NEXP.Pages
                 {
                     //MessageBox.Show("Image Click: " + sender.ToString());
                     NEXP.Utils.OpaqueClickableImage tmp = sender as NEXP.Utils.OpaqueClickableImage;
-
+                    int pageNum = 3;
                     if (tmp.Name == "NextButton")
                     {
-                        //Log.getLogInstance().writeLog(Frame.Content.ToString());
-                        /*
-                         if (Frame.Content.ToString() == "/Content/RQ_list2.xaml")
-                         {
-                             NavigationCommands.GoToPage.Execute("/Content/RQ_list1.xaml", Frame);
-                         }
-                         */
-                        content++;
-                        content = content % 3;
-                        if (content == 0)
+                        if (CurrentPage < pageNum) CurrentPage++;
+                        switch (CurrentPage)
                         {
-                            NavigationCommands.GoToPage.Execute("/Content/Notes.xaml", Frame);
+                            case 1:
+                                NavigationCommands.GoToPage.Execute("/Content/DetailedSteps.xaml", Frame);
+                                break;
+                            case 2:
+                                NavigationCommands.GoToPage.Execute("/Content/Conducting.xaml", Frame);
+                                break;
+                            case 3:
+                                NavigationCommands.GoToPage.Execute("/Content/Notes.xaml", Frame);
+                                break;
                         }
-                        else if (content == 1)
-                        {
-                            NavigationCommands.GoToPage.Execute("/Content/DetailedSteps.xaml", Frame);
-                        }
-                        else if (content == 2)
-                        {
-                            NavigationCommands.GoToPage.Execute("/Content/Conducting.xaml", Frame);
-                        }
-                        else { }
                         //Log.getLogInstance().writeLog(Frame.Content.ToString());
                         //NavigationCommands.GoToPage.Execute("/Pages/Home.xaml", this);   // http://mui.codeplex.com/discussions/434905
+
+                    }
+                    else if (tmp.Name == "NewBackButton")
+                    {
+                        if (CurrentPage > 1) CurrentPage--;
+                        switch (CurrentPage)
+                        {
+                            case 1:
+                                NavigationCommands.GoToPage.Execute("/Content/DetailedSteps.xaml", Frame);
+                                break;
+                            case 2:
+                                NavigationCommands.GoToPage.Execute("/Content/Conducting.xaml", Frame);
+                                break;
+                            case 3:
+                                NavigationCommands.GoToPage.Execute("/Content/Notes.xaml", Frame);
+                                break;
+                        }
                     }
                 }
             }
