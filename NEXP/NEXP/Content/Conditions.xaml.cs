@@ -30,5 +30,53 @@ namespace NEXP.Content
             datagrid.DataContext = NEXP.MainWindow.datas.independentVariables;
 
         }
+        private void WindowsLoaded(object sender, RoutedEventArgs e)
+        {
+            int tmp = 1; //num of conditions
+
+            foreach (var idv in MainWindow.datas.independentVariables)
+            {
+                if (idv.subjectDesign == SUBJECTDESIGN.Within)
+                {
+                    // Collect name of levels of idv.
+                    List<string> levelsName = new List<string>();
+                    foreach (var level in idv.levels)
+                    {
+                        levelsName.Add(level.name);
+                    }
+
+                    switch (idv.counterBalance)
+                    {
+                        case COUNTERBALANCE.FullyCounterBalancing: //Permutate
+
+                            // Generate permutation.
+                            int n = 0;
+                            foreach (var i in Utils.GenerateSimulation.Permutate(levelsName, levelsName.Count))
+                            {
+                                n++;
+                            }
+                            tmp *= n;
+                            break;
+
+                        case COUNTERBALANCE.LatinSquare://count of the level
+
+                            tmp *= levelsName.Count;
+                            break;
+
+                        case COUNTERBALANCE.NoCounterBalancing://count of the level
+                            tmp *= levelsName.Count;
+                            break;
+                    }
+                }
+                else
+                {
+                    // Do nothing.
+                    //Between IDV does not affect the num of conditions
+                    //tmp *= idv.levels.Count;
+                }
+            }
+
+            Control.getControlInstance().setConditionsNum(tmp);
+        }
     }
 }

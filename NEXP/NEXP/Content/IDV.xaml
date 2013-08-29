@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="500" Loaded="IDV_PageLoaded">
     <Grid Style="{StaticResource ContentRoot}">
         <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" TextWrapping="Wrap" Text="Independent Variables" VerticalAlignment="Top" Height="40" Width="367" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print" Foreground="#FF267BCF"
                    ToolTip="Independent variable(IV):&#xa;Factors that are manipulated in the experiment&#xa;Have multiple levels"/>

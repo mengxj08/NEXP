@@ -35,7 +35,7 @@
                  ToolTip="___(certain context)___"/>
 
         <CheckBox x:Name="checkbox1" Canvas.Left="461" Canvas.Top="89" Width="21" RenderTransformOrigin="-0.206,5.294" Checked="checkbox1_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
-        <CheckBox x:Name="checkbox2" Canvas.Left="461" Canvas.Top="222" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
+        <CheckBox x:Name="checkbox2" Canvas.Left="461" Canvas.Top="150" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
         <CheckBox x:Name="checkbox3" Canvas.Left="461" Canvas.Top="299" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox3_checked" ToolTip="Click the checkbox to add/delete corresponding items in the listbox"/>
 
     </Canvas>

@@ -36,7 +36,7 @@ namespace NEXP.Content
         }
         private void IDV_PageLoaded(object sender, RoutedEventArgs e)
         {
-
+            Control.getControlInstance().RQContributeToVariable();
         }
         private void del_item(object sender, RoutedEventArgs e)
         {

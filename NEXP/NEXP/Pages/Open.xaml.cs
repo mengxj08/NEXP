@@ -41,7 +41,7 @@ namespace NEXP.Pages
             {
                 //NewDesignTool.MainWindow.datas = new DataStructure();
                 NEXP.MainWindow.datas.ReadFromFile(dialog.FileName);
-
+                NEXP.MainWindow.modeType = MODE.OpenItem;
                 //NewDesignTool.Pages.IDV.IDV_PAGE_FLAG = true;
                 //NewDesignTool.Pages.DV.DV_PAGE_FLAG = true;
                 //NewDesignTool.Pages.ArrangeConditions.AC_PAGE_FLAG = true;

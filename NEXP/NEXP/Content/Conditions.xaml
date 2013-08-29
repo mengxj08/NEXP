@@ -7,7 +7,7 @@
              xmlns:assembly="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:NEXP" 
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="500" Loaded="WindowsLoaded">
     <UserControl.Resources>
         <ObjectDataProvider x:Key="SubjectTypes" MethodName="GetValues" ObjectType="{x:Type assembly:Enum}">
             <ObjectDataProvider.MethodParameters>

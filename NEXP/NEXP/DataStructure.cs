@@ -371,7 +371,7 @@ namespace NEXP
 
             public Hypothesis()
             {
-                mainSolution = "";
+                //mainSolution = "";
                 compareSolutions = new ObservableCollection<String>();
                 tasks = new ObservableCollection<String>();
                 measures = new ObservableCollection<String>();
@@ -594,7 +594,7 @@ namespace NEXP
             set 
             {
                 this._trial = value;
-                this.totalTimeCost = this.trial * this.block * this.timePerTrial * this.actualNum / 60;
+                this.totalTimeCost = this.trial * this.block * this.timePerTrial * (Control.getControlInstance().getConditionsNum()) / 60;
                 this.onPropertyChanged("trial");
                 this.onPropertyChanged("totalTimeCost");
             } 
@@ -609,7 +609,7 @@ namespace NEXP
             set
             {
                 this._timePerTrial = value;
-                this.totalTimeCost = this.trial * this.block * this.timePerTrial * this.actualNum / 60;
+                this.totalTimeCost = this.trial * this.block * this.timePerTrial * (Control.getControlInstance().getConditionsNum()) / 60;
                 this.onPropertyChanged("timePerTrial");
                 this.onPropertyChanged("totalTimeCost");
                
@@ -625,7 +625,7 @@ namespace NEXP
             set
             {
                 this._block = value;
-                this.totalTimeCost = this.trial * this.block * this.timePerTrial * this.actualNum / 60;
+                this.totalTimeCost = this.trial * this.block * this.timePerTrial * (Control.getControlInstance().getConditionsNum()) / 60;
                 this.onPropertyChanged("totalTimeCost");
                 this.onPropertyChanged("block");
             }
