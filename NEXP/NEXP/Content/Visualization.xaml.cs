@@ -23,23 +23,19 @@ namespace NEXP.Content
     /// </summary>
     public partial class Visualization : UserControl
     {
+        private Process cmdProcess;
+
         public Visualization()
         {
             InitializeComponent();
 
-            //string uri = "http://localhost:8888/Simulation.html";
-            //this.browser.Navigate(new Uri(uri, UriKind.Absolute));
-
             // Turn on local server here, and turn off in the Finalize().
+            cmdProcess = new Process();
+            cmdProcess.StartInfo.WorkingDirectory = @Directory.GetCurrentDirectory();
+            cmdProcess.StartInfo.FileName = "cmd.exe";
+            cmdProcess.StartInfo.Arguments = "/k python -m SimpleHTTPServer 8888";
+            cmdProcess.Start();
 
-            ProcessStartInfo processStartInfo = new ProcessStartInfo();
-            processStartInfo.WorkingDirectory = @Directory.GetCurrentDirectory();
-            processStartInfo.FileName = "cmd.exe";
-            Log.getLogInstance().writeLog(processStartInfo.WorkingDirectory);
-            processStartInfo.Arguments = "/k python -m SimpleHTTPServer 8888";
-            Process.Start(processStartInfo);
-
-            //Log.getLogInstance().writeLog(Directory.GetCurrentDirectory());
         }
 
         // Click the button to generate data to .json file, and transfer to web browser to show the simulation result.

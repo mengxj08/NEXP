@@ -17,21 +17,72 @@ namespace NEXP.Utils
         private int numberOfConditions = 1;
         private System.IO.StreamWriter file;
 
+        // Consider between IDVs.
+        private List<NEXP.IndependentVariable> idvBetween;
+        private List<NEXP.IndependentVariable> idvWithin;
+        private List<List<string>> betweenArrangement;
+        private int numberOfBetweenArrangement = 1;
+        private int numberOfParticipantsCB;
+
         public GenerateSimulation()
         {
             dataPath = Directory.GetCurrentDirectory() + "\\";
             overall = new List<List<List<string>>>();
             individual = new List<List<List<string>>>();
 
+            idvBetween = new List<IndependentVariable>();
+            idvWithin = new List<IndependentVariable>();
+
+            foreach (var idv in MainWindow.datas.independentVariables)
+            {
+                switch (idv.subjectDesign)
+                {
+                    case SUBJECTDESIGN.Between:
+                        idvBetween.Add(idv);
+                        numberOfBetweenArrangement *= idv.levels.Count;
+                        break;
+                    case SUBJECTDESIGN.Within:
+                        idvWithin.Add(idv);
+                        break;
+                }
+            }
         }
 
         public void ShowSimulation()
         {
             GenerateOverallArrangement();
             GenerateIndivisualArrangement();
+            GenerateBetweenArrangement();
             WriteToJson();
         }
 
+        // Version 1.0: without considering between IDVs.
+
+        //private void WriteToJson()
+        //{
+        //    file = new System.IO.StreamWriter(dataPath + "test.json", false);
+        //    file.WriteLine("{");
+        //    file.WriteLine(WrapperNameLine("Experiment", 0));
+        //    file.WriteLine("\"children\": [");
+
+        //    int i;
+        //    for (i = 0; i < individual.Count - 1; i++)
+        //    {
+        //        // Format: seperate as { participant }. Don't include char ',' .
+        //        WriteParticipant(i);
+        //        file.WriteLine(",");
+        //    }
+        //    // Write the last participant without ',' appended.
+        //    WriteParticipant(i);
+
+        //    file.WriteLine("]");
+        //    file.WriteLine("}");
+
+        //    file.Close();
+        //}
+
+        
+        // Version 2.0: Consider between IDVs.
         private void WriteToJson()
         {
             file = new System.IO.StreamWriter(dataPath + "test.json", false);
@@ -39,15 +90,45 @@ namespace NEXP.Utils
             file.WriteLine(WrapperNameLine("Experiment", 0));
             file.WriteLine("\"children\": [");
 
-            int i;
-            for (i = 0; i < individual.Count - 1; i++)
+            if (numberOfBetweenArrangement == 1)
             {
-                // Format: seperate as { participant }. Don't include char ',' .
-                WriteParticipant(i);
-                file.WriteLine(",");
+                // There is no between IDV.
+                int i;
+                for (i = 0; i < individual.Count - 1; i++)
+                {
+                    // Format: seperate as { participant }. Don't include char ',' .
+                    WriteParticipant(i, -1, "");
+                    file.WriteLine(",");
+                }
+                // Write the last participant without ',' appended.
+                WriteParticipant(i, -1, "");
             }
-            // Write the last participant without ',' appended.
-            WriteParticipant(i);
+            else
+            {
+                numberOfParticipantsCB = numberOfParticipants * numberOfBetweenArrangement;
+                List<string> betweenStringFormated = FormatBetweenString();
+
+                int j;
+                for (j = 0; j < numberOfBetweenArrangement - 1; j++)
+                {
+                    for (int i = 0; i < individual.Count; i++)
+                    {
+                        // Format: seperate as { participant }. Don't include char ',' .
+                        WriteParticipant(i, i + j * individual.Count, betweenStringFormated[j]);
+                        file.WriteLine(",");
+                    }
+                }
+                // Add the last one.
+                int m;
+                for (m = 0; m < individual.Count - 1; m++)
+                {
+                    // Format: seperate as { participant }. Don't include char ',' .
+                    WriteParticipant(m, m + j * individual.Count, betweenStringFormated[j]);
+                    file.WriteLine(",");
+                }
+                // Write the last participant without ',' appended.
+                WriteParticipant(m, m + j * individual.Count, betweenStringFormated[j]);
+            }
 
             file.WriteLine("]");
             file.WriteLine("}");
@@ -55,19 +136,26 @@ namespace NEXP.Utils
             file.Close();
         }
 
-        private void WriteParticipant(int idParticipant)
+        private void WriteParticipant(int idInside, int idParticipant, string betweenString)
         {
             file.WriteLine("{");
-            file.WriteLine(WrapperNameLine("Participant " + idParticipant.ToString(), 0));
+            if (String.IsNullOrEmpty(betweenString))
+            {
+                file.WriteLine(WrapperNameLine("Participant " + idParticipant.ToString(), 0));
+            }
+            else
+            {
+                file.WriteLine(WrapperNameLine("Participant " + idParticipant.ToString() + betweenString, 0));
+            }
             file.WriteLine("\"children\": [");
 
             int i;
             for (i = 0; i < MainWindow.datas.arrangement.block - 1; i++)
             {
-                WriteBlock(idParticipant, i);
+                WriteBlock(idInside, i);
                 file.WriteLine(",");
             }
-            WriteBlock(idParticipant, i);
+            WriteBlock(idInside, i);
 
             file.WriteLine("]");
             file.WriteLine("}");
@@ -139,6 +227,27 @@ namespace NEXP.Utils
             }
         }
 
+        private List<string> FormatBetweenString()
+        {
+            List<string> result = new List<string>();
+
+            foreach (List<string> sampleArrangement in betweenArrangement)
+            {
+                StringBuilder builder = new StringBuilder();
+                builder.Append(" (");
+                foreach (string item in sampleArrangement)
+                {
+                    builder.Append(item + ", ");
+                }
+                builder.Remove(builder.Length - 2, 2);
+                builder.Append(")");
+
+                result.Add(builder.ToString());
+            }
+
+            return result;
+        }
+
         private void GenerateIndivisualArrangement()
         {
             foreach (var idv in overall) 
@@ -148,8 +257,10 @@ namespace NEXP.Utils
 
             // After getting index for each participant, generate conditions.
             // The number of conditions may not be the same as the number of participants.
-            foreach (var idv in MainWindow.datas.independentVariables)
+            foreach (var idv in idvWithin)
+            {
                 numberOfConditions *= idv.levels.Count;
+            }
 
             // 'i' is the id of participant.
             for (int i = 0; i < numberOfParticipants; i++)
@@ -170,7 +281,7 @@ namespace NEXP.Utils
                     tmp -= index[j] * total;
                 }
 
-                Log.getLogInstance().writeLog(numberOfConditions.ToString());
+                //Log.getLogInstance().writeLog(numberOfConditions.ToString());
 
                 for (int k = 0; k < numberOfConditions; k++)
                 {
@@ -181,7 +292,7 @@ namespace NEXP.Utils
 
                     for (int m = 0; m < overall.Count; m++)
                     {
-                        totalConditions /= MainWindow.datas.independentVariables[m].levels.Count;
+                        totalConditions /= idvWithin[m].levels.Count;
                         int n = tmpK / totalConditions;
                         condition.Add(overall[m][index[m]][n]);
                         tmpK -= n * totalConditions;
@@ -203,7 +314,7 @@ namespace NEXP.Utils
             //List<string> techniques = new List<string>();
             //techniques.Add(MainWindow.datas.researchQuestion.hypothesis.mainSolution);
             
-            foreach (var idv in MainWindow.datas.independentVariables)
+            foreach (var idv in idvWithin)
             {
                 List<List<string>> idvArrangement = new List<List<string>>();
 
@@ -278,6 +389,32 @@ namespace NEXP.Utils
                         yield return perm;
                     RotateRight(sequence, count);
                 }
+            }
+        }
+
+        private void GenerateBetweenArrangement()
+        {
+            if (idvBetween.Count == 0)
+                return;
+
+            betweenArrangement = new List<List<string>>();
+
+            for (int i = 0; i < numberOfBetweenArrangement; i++)
+            {
+                List<string> sampleArrangement = new List<string>();
+                
+                int tmpI = i;
+                int totalArrangement = numberOfBetweenArrangement;
+
+                for (int m = 0; m < idvBetween.Count; m++)
+                {
+                    totalArrangement /= idvBetween[m].levels.Count;
+                    int n = tmpI / totalArrangement;
+                    sampleArrangement.Add(idvBetween[m].levels[n].name);
+                    tmpI -= n * totalArrangement;
+                }
+
+                betweenArrangement.Add(sampleArrangement);
             }
         }
     }
