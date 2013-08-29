@@ -40,6 +40,50 @@ namespace NEXP.Content
         private void Windows_Loaded(object sender, RoutedEventArgs e)
         { 
             //Caluculate the minNum of participants
+            int tmp = 1;
+
+            foreach (var idv in MainWindow.datas.independentVariables)
+            {
+                if (idv.subjectDesign == SUBJECTDESIGN.Within)
+                {
+                    // Collect name of levels of idv.
+                    List<string> levelsName = new List<string>();
+                    foreach (var level in idv.levels)
+                    {
+                        levelsName.Add(level.name);
+                    }
+
+                    switch (idv.counterBalance)
+                    {
+                        case COUNTERBALANCE.FullyCounterBalancing:
+
+                            // Generate permutation.
+                            int n = 0;
+                            foreach (var i in Utils.GenerateSimulation.Permutate(levelsName, levelsName.Count))
+                            {
+                                n++;
+                            }
+                            tmp *= n;
+                            break;
+
+                        case COUNTERBALANCE.LatinSquare:
+
+                            tmp *= levelsName.Count;
+                            break;
+
+                        case COUNTERBALANCE.NoCounterBalancing:
+
+                            break;
+                    }
+                }
+                else
+                {
+                    // Between IDV.
+                    tmp *= idv.levels.Count;
+                }
+            }
+
+            MainWindow.datas.arrangement.minNum = tmp;
         }
     }
 }
