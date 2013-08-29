@@ -44,34 +44,42 @@ namespace NEXP.Content
 
             foreach (var idv in MainWindow.datas.independentVariables)
             {
-                // Collect name of levels of idv.
-                List<string> levelsName = new List<string>();
-                foreach (var level in idv.levels)
+                if (idv.subjectDesign == SUBJECTDESIGN.Within)
                 {
-                    levelsName.Add(level.name);
+                    // Collect name of levels of idv.
+                    List<string> levelsName = new List<string>();
+                    foreach (var level in idv.levels)
+                    {
+                        levelsName.Add(level.name);
+                    }
+
+                    switch (idv.counterBalance)
+                    {
+                        case COUNTERBALANCE.FullyCounterBalancing:
+
+                            // Generate permutation.
+                            int n = 0;
+                            foreach (var i in Utils.GenerateSimulation.Permutate(levelsName, levelsName.Count))
+                            {
+                                n++;
+                            }
+                            tmp *= n;
+                            break;
+
+                        case COUNTERBALANCE.LatinSquare:
+
+                            tmp *= levelsName.Count;
+                            break;
+
+                        case COUNTERBALANCE.NoCounterBalancing:
+
+                            break;
+                    }
                 }
-
-                switch (idv.counterBalance)
+                else
                 {
-                    case COUNTERBALANCE.FullyCounterBalancing:
-
-                        // Generate permutation.
-                        int n = 0;
-                        foreach (var i in Utils.GenerateSimulation.Permutate(levelsName, levelsName.Count))
-                        {
-                            n++;
-                        }
-                        tmp *= n;
-                        break;
-
-                    case COUNTERBALANCE.LatinSquare:
-
-                        tmp *= levelsName.Count;
-                        break;
-
-                    case COUNTERBALANCE.NoCounterBalancing:
-
-                        break;
+                    // Between IDV.
+                    tmp *= idv.levels.Count;
                 }
             }
 
