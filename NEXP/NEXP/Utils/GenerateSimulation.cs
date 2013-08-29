@@ -141,7 +141,10 @@ namespace NEXP.Utils
             file.WriteLine("{");
             if (String.IsNullOrEmpty(betweenString))
             {
-                file.WriteLine(WrapperNameLine("Participant " + idParticipant.ToString(), 0));
+                if(idParticipant == -1)
+                    file.WriteLine(WrapperNameLine("Participant " + idInside.ToString(), 0));
+                else
+                    file.WriteLine(WrapperNameLine("Participant " + idParticipant.ToString(), 0));
             }
             else
             {
