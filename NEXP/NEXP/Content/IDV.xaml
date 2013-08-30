@@ -13,13 +13,17 @@
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Path=levels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                     <StackPanel Orientation="Horizontal" Margin="4">
-                        <Canvas x:Name="Add" Margin="0 0 10 10" Width="30" Height="30" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0"  MouseUp="Icon_Add_MouseUp" MouseDown="Icon_Add_MouseDown">
-                            <Path Width="15" Height="15" Canvas.Left ="0" Canvas.Top="0" Stretch="Fill" Fill="#FF000000" Data="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z "/>
+                        <mui:ModernButton x:Name="Add_levels" ToolTip="Add level into independent variable only" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " Canvas.Left="202" Canvas.Top="57" Width="19" Height="19" Click="Item_Add" RenderTransformOrigin="-1.134,0.846"/>
+                        <Canvas x:Name="Add" Margin="0 0 10 10" Width="30" Height="30" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0" >
+                           
+                            <!-- <Path Width="15" Height="15" Canvas.Left ="0" Canvas.Top="0" Stretch="Fill" Fill="#FF000000" Data="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z "  MouseUp="Icon_Add_MouseUp" MouseDown="Icon_Add_MouseDown"/>-->
                         </Canvas>
-                        <TextBlock Margin="2" FontSize="30" Text="{Binding Path=name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Heading1}" FontFamily="SketchFlow Print"/>
-                        <Canvas x:Name="Minus" Margin="10 0 0 10" Width="30" Height="30" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0" MouseUp="Icon_Add_MouseUp" MouseDown="Icon_Add_MouseDown">
-                            <Path Width="15" Height="3" Canvas.Right="0" Canvas.Top="5" Stretch="Fill" Fill="#FF000000" Data="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " />
+                        <TextBlock Margin="2" FontSize="20" Text="{Binding Path=name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <Canvas x:Name="Minus" Margin="10 0 0 10" Width="30" Height="30" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0" >
+                            <!-- <Path Width="15" Height="3" Canvas.Right="0" Canvas.Top="5" Stretch="Fill" Fill="#FF000000" Data="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " MouseUp="Icon_Add_MouseUp" MouseDown="Icon_Add_MouseDown"/>-->
+                            
                         </Canvas>
+                        <mui:ModernButton x:Name="Del_levels" ToolTip="Delete the corresponding item" EllipseStrokeThickness="2" EllipseDiameter="16" IconWidth="10" IconHeight="10" IconData="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z " Canvas.Left="202" Canvas.Top="100" Width="19" Height="19" Click="Item_Del"/>
                     </StackPanel>
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
@@ -28,7 +32,7 @@
         <Button Content="Delete Item" HorizontalAlignment="Left" Height="27" Margin="357,397,0,0" VerticalAlignment="Top" Width="101" Click="del_item" RenderTransformOrigin="0.198,0.447"/>
         -->
         <TextBox x:Name="addItemText" HorizontalAlignment="Left" Height="44" Margin="159,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
-        <mui:ModernButton Click="add_item" ToolTip="Add Independent Variables" EllipseDiameter="48" EllipseStrokeThickness="2" IconWidth="30" IconHeight="30" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " IsEnabled="True" Margin="48,396,367,10" />
+        <mui:ModernButton Click="add_item" ToolTip="Add Independent Variables only" EllipseDiameter="48" EllipseStrokeThickness="2" IconWidth="30" IconHeight="30" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " IsEnabled="True" Margin="48,396,367,10" />
 
     </Grid>
 </UserControl>
