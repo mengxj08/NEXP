@@ -42,6 +42,12 @@ namespace NEXP.Content
         // Click the button to generate data to .json file, and transfer to web browser to show the simulation result.
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (!IsValidCondition())
+            {
+                MessageBoxButton btn = MessageBoxButton.OK;
+                FirstFloor.ModernUI.Windows.Controls.ModernDialog.ShowMessage("Invalid condition to generate simulation. Please check carefully!", "Error Message", btn);
+                return;
+            }
 
             Utils.GenerateSimulation simulation = new Utils.GenerateSimulation();
             simulation.ShowSimulation();
@@ -53,6 +59,21 @@ namespace NEXP.Content
                 process.StartInfo.Arguments = url + " --incognito";
                 process.Start();
             }
+        }
+
+        private bool IsValidCondition()
+        {
+            if (MainWindow.datas.independentVariables.Count == 0)
+                return false;
+            foreach (var idv in MainWindow.datas.independentVariables)
+            {
+                if (idv.levels.Count == 0)
+                    return false;
+            }
+            if (MainWindow.datas.arrangement.block == 0 || MainWindow.datas.arrangement.trial == 0)
+                return false;
+
+            return true;
         }
 
         ~Visualization()
