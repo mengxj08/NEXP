@@ -30,7 +30,7 @@ namespace NEXP.Content
             datagrid.DataContext = NEXP.MainWindow.datas.independentVariables;
 
         }
-        private void WindowsLoaded(object sender, RoutedEventArgs e)
+        private void WindowsLoaded(object sender, RoutedEventArgs e)//Calculate Condition and set Control.ConditionNum
         {
             int tmp = 1; //num of conditions
 

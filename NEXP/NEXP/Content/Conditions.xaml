@@ -45,7 +45,7 @@
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
                             <ComboBox x:Name="DesignCombobox" ItemsSource="{Binding Source={StaticResource SubjectTypes}}"
-                                              SelectedItem="{Binding Path=subjectDesign}"/>
+                                              SelectedItem="{Binding Path=subjectDesign,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -58,17 +58,17 @@
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
                             <ComboBox x:Name="StrategyCombobox" ItemsSource="{Binding Source={StaticResource keyStrategy}}"
-                                              SelectedItem="{Binding Path=counterBalance}"/>
+                                              SelectedItem="{Binding Path=counterBalance,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="130" Header="Level" MaxWidth="150" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <ListBox x:Name="levellistbox" ItemsSource="{Binding Path=levels}" >
+                            <ListBox x:Name="levellistbox" ItemsSource="{Binding Path=levels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
-                                        <Label Content="{Binding name}"/>
+                                        <Label Content="{Binding name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                             </ListBox>
