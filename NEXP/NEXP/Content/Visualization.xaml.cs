@@ -34,6 +34,7 @@ namespace NEXP.Content
             cmdProcess.StartInfo.WorkingDirectory = @Directory.GetCurrentDirectory();
             cmdProcess.StartInfo.FileName = "cmd.exe";
             cmdProcess.StartInfo.Arguments = "/k python -m SimpleHTTPServer 8888";
+            cmdProcess.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             cmdProcess.Start();
 
         }
@@ -50,7 +51,6 @@ namespace NEXP.Content
             {
                 process.StartInfo.FileName = @"chrome.exe";
                 process.StartInfo.Arguments = url + " --incognito";
-
                 process.Start();
             }
         }

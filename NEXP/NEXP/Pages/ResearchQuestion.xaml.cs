@@ -81,6 +81,11 @@ namespace NEXP.Pages
                     int pageNum = 3;
                     if (tmp.Name == "NextButton")
                     {
+                        if (CurrentPage == pageNum)
+                        {
+                            MessageBoxButton btn = MessageBoxButton.OK;
+                            FirstFloor.ModernUI.Windows.Controls.ModernDialog.ShowMessage("Congratulations! You have already finished 1.Research Question, please click the top-left Back to the main window and continue your design.", "Congratulations!", btn);
+                        }
                         if (CurrentPage < pageNum) CurrentPage++;
                         switch (CurrentPage)
                         {

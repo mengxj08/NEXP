@@ -8,6 +8,6 @@
              d:DesignHeight="300" d:DesignWidth="300"
              Loaded="OpenWindow_Loaded">
     <Grid Style="{StaticResource ContentRoot}">
-        <Button x:Name="OpenButton" Content="Open" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <mui:ModernButton x:Name="OpenButton" Content="Open" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click_1" EllipseDiameter="96" EllipseStrokeThickness="3" IconWidth="64" IconHeight="64" FontSize="20" IconData="F1 M 19,50L 28,34L 63,34L 54,50L 19,50 Z M 19,28.0001L 35,28C 36,25 37.4999,24.0001 37.4999,24.0001L 48.75,24C 49.3023,24 50,24.6977 50,25.25L 50,28L 53.9999,28.0001L 53.9999,32L 27,32L 19,46.4L 19,28.0001 Z "/>
     </Grid>
 </UserControl>
