@@ -62,8 +62,31 @@ namespace NEXP
                 {
                     NEXP.MainWindow.datas.dependentVariables.Add(new NEXP.DependentVariable(temp));
                 }
+            }         
+        }
+        public bool IsValidCondition()//Check for Valid Condition: IV/IDV/block/Trial
+        {
+            if (MainWindow.datas.independentVariables.Count == 0)
+                return false;
+            foreach (var idv in MainWindow.datas.independentVariables)
+            {
+                if (idv.levels.Count == 0)
+                    return false;
             }
-            
+            if (MainWindow.datas.arrangement.block == 0 || MainWindow.datas.arrangement.trial == 0)
+                return false;
+
+            return true;
+        }
+        public bool IsValidEstimate()//Estimate if the arrangement makes sense
+        {
+            if (MainWindow.datas.arrangement.block == 0 || MainWindow.datas.arrangement.trial == 0 || MainWindow.datas.arrangement.actualNum == 0 || MainWindow.datas.arrangement.feePerParticipant == 0 || MainWindow.datas.arrangement.timePerTrial == 0)
+                return false;
+
+            if (MainWindow.datas.arrangement.totalTimeCost >= 120)
+                return false;
+
+            return true;
         }
     }
 }

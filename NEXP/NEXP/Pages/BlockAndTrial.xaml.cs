@@ -76,14 +76,25 @@ namespace NEXP.Pages
                     //MessageBox.Show("Image Click: " + sender.ToString());
                     NEXP.Utils.OpaqueClickableImage tmp = sender as NEXP.Utils.OpaqueClickableImage;
                     int pageNum = 4;
+                    int EstimatePage = 3;
                     if (tmp.Name == "NextButton")
                     {
                         if (CurrentPage == pageNum)
                         {
                             MessageBoxButton btn = MessageBoxButton.OK;
                             FirstFloor.ModernUI.Windows.Controls.ModernDialog.ShowMessage("Congratulations! You have already finished 4. Decide blocks & trials, please click the top-left Back to the main window and continue your design.", "Congratulations!", btn);
+                            return;
                         }
 
+                        if(CurrentPage == EstimatePage)
+                        {
+                            if (! Control.getControlInstance().IsValidEstimate())
+                            {
+                                MessageBoxButton btn = MessageBoxButton.OK;
+                                FirstFloor.ModernUI.Windows.Controls.ModernDialog.ShowMessage("Sorry,our tool automatecially detected that your experimental arrangment is not reasonable. Please check your Variables/Strategy/Block/Trial/ to continue.", "Error Message!", btn);
+                                return;
+                            }
+                        }
                         if (CurrentPage < pageNum) CurrentPage++;
                         switch (CurrentPage)
                         {
