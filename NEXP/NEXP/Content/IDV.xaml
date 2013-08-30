@@ -31,8 +31,8 @@
         <!-- 
         <Button Content="Delete Item" HorizontalAlignment="Left" Height="27" Margin="357,397,0,0" VerticalAlignment="Top" Width="101" Click="del_item" RenderTransformOrigin="0.198,0.447"/>
         -->
-        <TextBox x:Name="addItemText" HorizontalAlignment="Left" Height="44" Margin="159,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
-        <mui:ModernButton Click="add_item" ToolTip="Add Independent Variables only" EllipseDiameter="48" EllipseStrokeThickness="2" IconWidth="30" IconHeight="30" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " IsEnabled="True" Margin="48,396,367,10" />
+        <TextBox x:Name="addItemText" HorizontalAlignment="Left" Height="44" Margin="159,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <mui:ModernButton Click="add_item" ToolTip="Add Independent Variables only" EllipseDiameter="48" EllipseStrokeThickness="2" IconWidth="30" IconHeight="30" IconData="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " IsEnabled="True" Margin="21,388,395,10" />
 
     </Grid>
 </UserControl>

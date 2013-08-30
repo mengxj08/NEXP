@@ -19,7 +19,7 @@
             </mui:ModernFrame >
         </Border >
         <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="10,448,0,0" VerticalAlignment="Top"  Source="pack://siteoforigin:,,,../ImageSources/Navi3.png" Height="91" Width="102"/>
-        <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="603,549,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_NextButton" MouseUp="OpaqueClickableImage_MouseUp_NextButton" Source="pack://siteoforigin:,,,../ImageSources/NewNextButton.png" Height="43" Width="105" x:Name="NextButton"/>
-        <Utils:OpaqueClickableImage HorizontalAlignment="Left" Margin="177,549,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_NextButton" MouseUp="OpaqueClickableImage_MouseUp_NextButton" Source="pack://siteoforigin:,,,../ImageSources/NewBack.png" Height="43" Width="105" x:Name="NewBackButton"/>
+        <Utils:OpaqueClickableImage ToolTip="NEXP" HorizontalAlignment="Left" Margin="603,549,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_NextButton" MouseUp="OpaqueClickableImage_MouseUp_NextButton" Source="pack://siteoforigin:,,,../ImageSources/NewNextButton.png" Height="43" Width="105" x:Name="NextButton"/>
+        <Utils:OpaqueClickableImage ToolTip="BACK" HorizontalAlignment="Left" Margin="177,549,0,0" VerticalAlignment="Top"  MouseDown="OpaqueClickableImage_MouseDown_NextButton" MouseUp="OpaqueClickableImage_MouseUp_NextButton" Source="pack://siteoforigin:,,,../ImageSources/NewBack.png" Height="43" Width="105" x:Name="NewBackButton"/>
     </Grid>
 </UserControl>

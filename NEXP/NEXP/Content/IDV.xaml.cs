@@ -38,12 +38,11 @@ namespace NEXP.Content
         {
             Control.getControlInstance().RQContributeToVariable();
         }
+       /* This function is used as the del event of the old delete button
         private void del_item(object sender, RoutedEventArgs e)
         {
             if (tv.SelectedItem != null)
             {
-                //Log.getLogInstance().writeLog((tv.Items.IndexOf(tv.SelectedItem)).ToString());
-
                 if (tv.Items.IndexOf(tv.SelectedItem) != -1)
                 {
                     NEXP.MainWindow.datas.independentVariables.RemoveAt(tv.Items.IndexOf(tv.SelectedItem));
@@ -56,7 +55,6 @@ namespace NEXP.Content
                     {
                         if (IDV.levels.Contains(selectedLevel))
                         {
-                            //Log.getLogInstance().writeLog("second");
                             IDV.levels.Remove(selectedLevel);
                         }
 
@@ -65,6 +63,7 @@ namespace NEXP.Content
                 }
             }
         }
+        */
         private void add_item(object sender, RoutedEventArgs e)
         {
             if (addItemText.Text == "")
