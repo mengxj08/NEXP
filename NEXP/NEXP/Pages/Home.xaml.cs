@@ -71,7 +71,7 @@ namespace NEXP.Pages
                     }
                     else if (tmp.Name == "Back")
                     {
-                        //NavigationCommands.
+                        NavigationCommands.GoToPage.Execute("/Pages/Welcome.xaml", this);
                     }
                 }
             }

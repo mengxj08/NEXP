@@ -71,29 +71,51 @@ namespace NEXP.Content
             if (tmp.Name == "Del_compareSolutions")
             {
                 if (compareSolutions.SelectedItem != null)
+                {
                     NEXP.MainWindow.datas.researchQuestion.hypothesis.compareSolutions.RemoveAt(compareSolutions.Items.IndexOf(compareSolutions.SelectedItem));
-                compareSolutions.SelectedIndex = 0;
+                    compareSolutions.SelectedIndex = 0;
+                }
+                else
+                    showErrorMessage();
             }
             else if (tmp.Name == "Del_tasks")
             {
                 if (tasks.SelectedItem != null)
+                {
                     NEXP.MainWindow.datas.researchQuestion.hypothesis.tasks.RemoveAt(tasks.Items.IndexOf(tasks.SelectedItem));
-                tasks.SelectedIndex = 0;
+                    tasks.SelectedIndex = 0;
+                }
+                else
+                    showErrorMessage();
             }
             else if (tmp.Name == "Del_measures")
             {
                 if (measures.SelectedItem != null)
+                {
                     NEXP.MainWindow.datas.researchQuestion.hypothesis.measures.RemoveAt(measures.Items.IndexOf(measures.SelectedItem));
-                measures.SelectedIndex = 0;
+                    measures.SelectedIndex = 0;
+                }
+                else
+                    showErrorMessage();
             }
             else if (tmp.Name == "Del_contexts")
             {
                 if (contexts.SelectedItem != null)
+                {
                     NEXP.MainWindow.datas.researchQuestion.hypothesis.contexts.RemoveAt(contexts.Items.IndexOf(contexts.SelectedItem));
-                contexts.SelectedIndex = 0;
+                    contexts.SelectedIndex = 0;
+                }
+                else
+                    showErrorMessage();
             }
             else
             { }
+        }
+        private void showErrorMessage()
+        {
+            MessageBoxButton btn = MessageBoxButton.OK;
+            FirstFloor.ModernUI.Windows.Controls.ModernDialog.ShowMessage("You should choose the item you want to delete!", "Error Message", btn);
+            return;
         }
     }
 }
