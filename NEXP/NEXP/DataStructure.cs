@@ -36,6 +36,7 @@ namespace NEXP
 
             // Initiate research question.
             XmlNode researchQuestionNode = doc.SelectSingleNode("design_guide/research_question");
+            researchQuestion.generalQuestion = researchQuestionNode.SelectSingleNode("general_question").InnerText;
             researchQuestion.experimentTitle = researchQuestionNode.SelectSingleNode("experiment_title").InnerText;
             researchQuestion.experimentDescription = researchQuestionNode.SelectSingleNode("experiment_description").InnerText;
             researchQuestion.experimentConductor = researchQuestionNode.SelectSingleNode("experiment_conductor").InnerText;
@@ -161,6 +162,7 @@ namespace NEXP
 
                 // Write research question.
                 writer.WriteStartElement("research_question");
+                writer.WriteElementString("general_question", researchQuestion.generalQuestion);
                 writer.WriteElementString("experiment_title", researchQuestion.experimentTitle);
                 writer.WriteElementString("experiment_description", researchQuestion.experimentDescription);
                 writer.WriteElementString("experiment_conductor", researchQuestion.experimentConductor);
@@ -285,6 +287,23 @@ namespace NEXP
 
     public class ResearchQuestion : ViewModelBase
     {
+        private string _generalQuestion;
+        public string generalQuestion
+        {
+            get
+            {
+                return this._generalQuestion;
+            }
+            set
+            {
+                if (value != this._generalQuestion)
+                {
+                    this._generalQuestion = value;
+                    onPropertyChanged("generalQuestion");
+                }
+            }
+        }
+
         private string _experimentTitle;
         public string experimentTitle 
         {
