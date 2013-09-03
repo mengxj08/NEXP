@@ -42,7 +42,7 @@ namespace NEXP
 
                 if (NEXP.MainWindow.datas.researchQuestion.hypothesis.mainSolution == null || NEXP.MainWindow.datas.researchQuestion.hypothesis.mainSolution == "") return;
 
-                NEXP.IndependentVariable suggest1 = new NEXP.IndependentVariable("Technology");
+                NEXP.IndependentVariable suggest1 = new NEXP.IndependentVariable("Technique");
 
                 suggest1.levels.Add(new NEXP.IndependentVariable.Level(NEXP.MainWindow.datas.researchQuestion.hypothesis.mainSolution));
                 foreach(string temp in NEXP.MainWindow.datas.researchQuestion.hypothesis.compareSolutions)
@@ -51,12 +51,19 @@ namespace NEXP
                 }
                 NEXP.MainWindow.datas.independentVariables.Add(suggest1);
 
-                NEXP.IndependentVariable suggest2 = new NEXP.IndependentVariable("Tasks");
+                NEXP.IndependentVariable suggest2 = new NEXP.IndependentVariable("Task");
                 foreach (string temp in NEXP.MainWindow.datas.researchQuestion.hypothesis.tasks)
                 {
                     suggest2.levels.Add(new NEXP.IndependentVariable.Level(temp));
                 }
                 NEXP.MainWindow.datas.independentVariables.Add(suggest2);
+
+                NEXP.IndependentVariable suggest3 = new NEXP.IndependentVariable("Context");
+                foreach (string temp in NEXP.MainWindow.datas.researchQuestion.hypothesis.contexts)
+                {
+                    suggest3.levels.Add(new NEXP.IndependentVariable.Level(temp));
+                }
+                NEXP.MainWindow.datas.independentVariables.Add(suggest3);
 
                 foreach (string temp in NEXP.MainWindow.datas.researchQuestion.hypothesis.measures)
                 {
