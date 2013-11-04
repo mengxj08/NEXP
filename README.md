@@ -7,16 +7,16 @@ This tool is used for designing controlling experiments in the HCI domain with t
 
 ## Screenshots:
 =======================
-![screenshot1](/NEXP/NEXP/screenshots/screenshot1.png)
+![screenshot1](/NEXP/screenshots/screenshot1.png)
 
 -------------------------------------------------------------------------------------
 
-![screenshot2](/NEXP/NEXP/screenshots/screenshot2.png)
+![screenshot2](/NEXP/screenshots/screenshot2.png)
 
 -------------------------------------------------------------------------------------
 
-![screenshot3](/NEXP/NEXP/screenshots/screenshot3.png)
+![screenshot3](/NEXP/screenshots/screenshot3.png)
 
 -------------------------------------------------------------------------------------
 
-![screenshot4](/NEXP/NEXP/screenshots/screenshot4.png)
+![screenshot4](/NEXP/screenshots/screenshot4.png)
