@@ -1,5 +1,5 @@
 
-**N**ext **EXP**eriment Design Tool
+Next EXPeriment Design Tool
 =======================
 
 This project aims to design and implement a new experiment designing guide tool.
