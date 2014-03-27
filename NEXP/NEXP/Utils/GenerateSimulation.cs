@@ -187,13 +187,18 @@ namespace NEXP.Utils
             file.WriteLine("{");
             string tmp = "(";
             int i;
-
-            for (i = 0; i < individual[idParticipant][idCondition].Count - 1; i++)
+            if (individual[idParticipant][idCondition].Count > 0)
             {
-                tmp += individual[idParticipant][idCondition][i] + ", ";
+                for (i = 0; i < individual[idParticipant][idCondition].Count - 1; i++)
+                {
+                    tmp += individual[idParticipant][idCondition][i] + ", ";
+                }
+                tmp += individual[idParticipant][idCondition][i] + ")";
             }
-            tmp += individual[idParticipant][idCondition][i] + ")";
-
+            else 
+            {
+                tmp += ")";
+            }
             file.WriteLine(WrapperNameLine("Condition " + idCondition.ToString() + ": " + tmp, 0));
             file.WriteLine("\"children\": [");
 
