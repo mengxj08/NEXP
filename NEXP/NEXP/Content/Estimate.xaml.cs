@@ -38,7 +38,12 @@ namespace NEXP.Content
             totaltimecost.DataContext = NEXP.MainWindow.datas.arrangement;
         }
         private void Windows_Loaded(object sender, RoutedEventArgs e)
-        { 
+        {
+            //Calculate the total time cost
+            MainWindow.datas.arrangement.totalTimeCost = MainWindow.datas.arrangement.trial * MainWindow.datas.arrangement.block * MainWindow.datas.arrangement.timePerTrial * (Control.getControlInstance().getConditionsNum()) / 60;
+            //Log.getLogInstance().writeLog("conditions:" + Control.getControlInstance().getConditionsNum().ToString());
+            //Log.getLogInstance().writeLog("totaltimecost:"+MainWindow.datas.arrangement.totalTimeCost.ToString());
+
             //Caluculate the minNum of participants
             int tmp = 1;
 

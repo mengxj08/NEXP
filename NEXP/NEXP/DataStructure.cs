@@ -666,10 +666,34 @@ namespace NEXP
                 this.onPropertyChanged("block");
             }
         }
-        
 
-        public int totalTimeCost { get; set; }
-        public int totalPayment { get; set; }
+        public int _totalTimeCost;
+        public int totalTimeCost 
+        {
+            get
+            {
+                return this._totalTimeCost;
+            }
+            set
+            {
+                this._totalTimeCost = value;
+                this.onPropertyChanged("totalTimeCost");
+            }
+        }
+
+        public int _totalPayment;
+        public int totalPayment 
+        {
+            get
+            {
+                return this._totalPayment;
+            }
+            set
+            {
+                this._totalPayment = value;
+                this.onPropertyChanged("totalPayment");
+            }
+        }
         public ObservableCollection<Participant> participants { get; set; }
         public Arrangement()
         {
