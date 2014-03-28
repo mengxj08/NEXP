@@ -62,7 +62,10 @@ namespace NEXP.Content
         }
         ~Visualization()
         {
-            cmdProcess.CloseMainWindow();
+            if (!cmdProcess.HasExited)
+            {
+                cmdProcess.CloseMainWindow();
+            }       
             cmdProcess.Close();
         }
     }
